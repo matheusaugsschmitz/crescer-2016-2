@@ -18,4 +18,7 @@ public class Item{
         return quantidade;
     }
     
+    public String getDescricao(){
+        return descricao;
+    }
 }

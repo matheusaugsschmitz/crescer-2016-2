@@ -10,7 +10,6 @@ public class Elfo{
         nome = n;
         arco = new Item("Arco", 1);
         flecha = new Item("Flecha", 42);
-        exp = 0;
     }
     
     public void atirarFlecha(){
@@ -33,6 +32,8 @@ public class Elfo{
         nome = n;
     }
     
-    
+    public Item getArco(){
+        return arco;
+    }
     
 }
