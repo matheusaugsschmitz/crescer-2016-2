@@ -6,26 +6,23 @@ public class Elfo{
     private int exp;
     
     //Metodos
-    public Elfo(String n, int flechas){
-        if(flechas == 0){
-            flechas += 42;
-        }
+    public Elfo(String n){
         nome = n;
         arco = new Item("Arco", 1);
-        flecha = new Item("Flecha", flechas);
+        flecha = new Item("Flecha", 42);
         exp = 0;
     }
     
-    public void atirarFlechaRefactory(boolean acertar){
+    public void atirarFlecha(){
         flecha.setQuantidade(flecha.getQuantidade()-1);
-        if(acertar){
-            exp++;
-        }
+        exp++;
     }
     
-    public void plusExp(double valor){
-        exp += valor;
-    }    
+    /*public void atirarFlechaRefactory(){
+        flecha.setQuantidade(flecha.getQuantidade()-1);
+        exp++;
+    }*/
+
     
     //Getters and Setters
     public String getNome(){
