@@ -12,16 +12,12 @@ public class Elfo{
         flecha = new Item("Flecha", 42);
     }
     
-    //METODOS
-    public void atirarFlecha(){
+    //METODOS    
+    public void atirarFlechaEmDwarf(Dwarf anao){
         if(flecha.getQuantidade() > 0){
             flecha.setQuantidade(flecha.getQuantidade()-1);
             exp++;
         }
-    }
-    
-    public void flecharDwarve(Dwarf anao){
-        atirarFlecha();
         anao.perderVida();
     }
     

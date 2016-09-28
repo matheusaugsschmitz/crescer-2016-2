@@ -55,7 +55,7 @@ public class ElfoTest{
         //Arrange
         Elfo elfo = new Elfo("Robin Wood");
         //Act
-        elfo.atirarFlecha();
+        elfo.atirarFlechaEmDwarf(new Dwarf());
         //Assert
         assertEquals(41, elfo.getFlecha().getQuantidade());
         assertEquals(1, elfo.getExp());
@@ -67,7 +67,7 @@ public class ElfoTest{
         Elfo elfo = new Elfo("Judas");
         //Act
         for(int i = 0; i < 40; i++){
-            elfo.atirarFlecha();
+            elfo.atirarFlechaEmDwarf(new Dwarf());
         }
         //Assert
         assertEquals(2, elfo.getFlecha().getQuantidade());
@@ -75,12 +75,12 @@ public class ElfoTest{
     }
     
     @Test
-    public void elfoAtiraFlechaEmAnao(){
+    public void elfoAtiraFlechaEmDwarf(){
         //Arrange
         Elfo elfo = new Elfo("Caçador de Anões");
         Dwarf anao = new Dwarf();
         //Act
-        elfo.flecharDwarve(anao);
+        elfo.atirarFlechaEmDwarf(anao);
         //Assert
         assertEquals(100, anao.getVida());
         assertEquals(41, elfo.getFlecha().getQuantidade());
