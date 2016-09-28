@@ -32,10 +32,10 @@ public class ElfoTest{
     }
     
     @Test
-    public void elfoNasceComFlechas(){
+    public void elfoNasceCom42Flechas(){
         //Arrange
         //Act
-        Elfo elfo = new Elfo("Shazam");
+        Elfo elfo = new Elfo("Batman");
         //Assert
         assertEquals("Flecha", elfo.getFlecha().getDescricao());
         assertEquals(42, elfo.getFlecha().getQuantidade());
@@ -45,7 +45,7 @@ public class ElfoTest{
     public void elfoNasceSemExp(){
         //Arrange
         //Act
-        Elfo elfo = new Elfo("Shazam");
+        Elfo elfo = new Elfo("Cleber");
         //Assert
         assertEquals(0, elfo.getExp());
     }
@@ -53,7 +53,7 @@ public class ElfoTest{
     @Test
     public void elfoAtiraFlecha(){
         //Arrange
-        Elfo elfo = new Elfo("Shazam");
+        Elfo elfo = new Elfo("Robin Wood");
         //Act
         elfo.atirarFlecha();
         //Assert
@@ -62,9 +62,9 @@ public class ElfoTest{
     }
     
     @Test
-    public void elfoAtiraFlechas(){
+    public void elfoAtira40Flechas(){
         //Arrange
-        Elfo elfo = new Elfo("Shazam");
+        Elfo elfo = new Elfo("Judas");
         //Act
         for(int i = 0; i < 40; i++){
             elfo.atirarFlecha();
@@ -75,9 +75,9 @@ public class ElfoTest{
     }
     
     @Test
-    public void flecharAnao(){
+    public void elfoAtiraFlechaEmAnao(){
         //Arrange
-        Elfo elfo = new Elfo("Shazam");
+        Elfo elfo = new Elfo("Caçador de Anões");
         Dwarve anao = new Dwarve();
         //Act
         elfo.flecharDwarve(anao);
