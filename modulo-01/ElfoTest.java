@@ -109,4 +109,29 @@ public class ElfoTest{
         }
         assertEquals("Goku possui 32 flechas e 10 níveis de experiência.", goku.toString());
     }
+    
+    @Test
+    public void construtorComNomeEUmaFlecha(){
+        Elfo armando = new Elfo("Armando Uma", 1);
+        assertEquals("Armando Uma", armando.getNome());
+        assertEquals(1, armando.getFlecha().getQuantidade());
+    }
+    
+    @Test
+    public void construtorComNomeE70Flechas(){
+        Elfo caio = new Elfo("Caio Rolando da Rocha", 70);
+        assertEquals("Caio Rolando da Rocha", caio.getNome());
+        assertEquals(70, caio.getFlecha().getQuantidade());
+    }
+    
+    @Test
+    public void elfoNasceCom70FlechasEAtira12EmDwarf(){
+        Elfo transformer = new Elfo("Carmen", 70);
+        Dwarf anao = new Dwarf();
+        for(int i = 0; i < 15; i++){
+            transformer.atirarFlechaEmDwarf(anao);
+        }
+        assertEquals("Carmen", transformer.getNome());
+        assertEquals(55, transformer.getFlecha().getQuantidade());        
+    }
 }

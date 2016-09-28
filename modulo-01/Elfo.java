@@ -12,6 +12,12 @@ public class Elfo{
         flecha = new Item("Flecha", 42);
     }
     
+    public Elfo(String n, int q){
+        nome = n;
+        arco = new Item("Arco", 1);
+        flecha = new Item("Flecha", q);
+    }
+    
     //METODOS    
     public void atirarFlechaEmDwarf(Dwarf anao){
         if(flecha.getQuantidade() > 0){
