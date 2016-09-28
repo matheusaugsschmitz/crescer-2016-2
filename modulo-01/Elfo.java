@@ -14,7 +14,7 @@ public class Elfo{
     public Elfo(String n, int q){
         nome = n;
         arco = new Item("Arco", 1);
-        flecha = new Item("Flecha", q);
+        flecha = new Item("Flecha", q >= 0 ? q : 42);
     }
     
     //METODOS    
