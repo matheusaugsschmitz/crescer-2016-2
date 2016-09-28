@@ -7,9 +7,8 @@ public class Elfo{
     
     //CONSTRUTOR
     public Elfo(String n){
-        nome = n;
-        arco = new Item("Arco", 1);
-        flecha = new Item("Flecha", 42);
+        //Chamando construtor de baixo
+        this(n, 42);
     }
     
     public Elfo(String n, int q){
