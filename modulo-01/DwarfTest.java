@@ -11,14 +11,14 @@ import org.junit.Test;
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class DwarveTest{
+public class DwarfTest{
     
     @Test
     public void vidaDwarvesAoNascer(){
         //Arrange
         
         //Act
-        Dwarve anao = new Dwarve();
+        Dwarf anao = new Dwarf();
         //Assert
         assertEquals(110, anao.getVida());
     }
@@ -26,9 +26,9 @@ public class DwarveTest{
     @Test
     public void dwarveLevandoFlechada(){
         //Arrange
-        Dwarve anao = new Dwarve();
+        Dwarf anao = new Dwarf();
         //Act
-        anao.levaFlechada();
+        anao.perderVida();
         //Assert
         assertEquals(100, anao.getVida());
     }

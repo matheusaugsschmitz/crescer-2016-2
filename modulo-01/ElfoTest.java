@@ -78,7 +78,7 @@ public class ElfoTest{
     public void elfoAtiraFlechaEmAnao(){
         //Arrange
         Elfo elfo = new Elfo("Caçador de Anões");
-        Dwarve anao = new Dwarve();
+        Dwarf anao = new Dwarf();
         //Act
         elfo.flecharDwarve(anao);
         //Assert

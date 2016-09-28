@@ -20,9 +20,9 @@ public class Elfo{
         }
     }
     
-    public void flecharDwarve(Dwarve anao){
+    public void flecharDwarve(Dwarf anao){
         atirarFlecha();
-        anao.levaFlechada();
+        anao.perderVida();
     }
     
     /*public void atirarFlechaRefactory(){
