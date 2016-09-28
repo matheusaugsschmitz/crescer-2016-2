@@ -24,12 +24,20 @@ public class CestoDeLembasTest{
     }
     
     @Test
-    public void cestoDivisivelPorDois(){
+    public void cestoDivisivelEmPares(){
         //Arrange
         
         //Act
         CestoDeLembas cesto = new CestoDeLembas(42);
         //Assert
-        assertEquals(true, cesto.cestoDivisivel());
+        assertTrue(cesto.podeDividirEmPares());
+    }
+    
+    @Test
+    public void dividirCestoComQuatroPaes(){
+        //Arrange
+        CestoDeLembas cesto = new CestoDeLembas(4);
+        //Act & Assert
+        assertTrue(cesto.podeDividirEmPares());
     }
 }
