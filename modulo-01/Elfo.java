@@ -8,24 +8,22 @@ public class Elfo{
     //Metodos
     public Elfo(String n, int flechas){
         if(flechas == 0){
-            flechas += 42;
+            flechas = 42;
         }
         nome = n;
         arco = new Item("Arco", 1);
         flecha = new Item("Flecha", flechas);
-        exp = 0;
     }
     
-    public void atirarFlechaRefactory(boolean acertar){
+    public void atirarFlecha(){
         flecha.setQuantidade(flecha.getQuantidade()-1);
-        if(acertar){
-            exp++;
-        }
+        exp++;
     }
     
-    public void plusExp(double valor){
-        exp += valor;
-    }    
+    /*public void atirarFlechaRefactory(){
+        flecha.setQuantidade(flecha.getQuantidade()-1);
+        exp++;
+    }*/
     
     //Getters and Setters
     public String getNome(){
@@ -35,7 +33,4 @@ public class Elfo{
     public void setNome(String n){
         nome = n;
     }
-    
-    
-    
 }
