@@ -1,23 +1,28 @@
 public class Elfo{
-    //Atributos
+    //ATRIBUTOS
     private String nome;
     private Item arco;
     private Item flecha;
     private int exp;
     
-    //Metodos
-    public Elfo(String n, int flechas){
-        if(flechas == 0){
-            flechas = 42;
-        }
+    //CONSTRUTOR
+    public Elfo(String n){
         nome = n;
         arco = new Item("Arco", 1);
-        flecha = new Item("Flecha", flechas);
+        flecha = new Item("Flecha", 42);
     }
     
+    //METODOS
     public void atirarFlecha(){
-        flecha.setQuantidade(flecha.getQuantidade()-1);
-        exp++;
+        if(flecha.getQuantidade() > 0){
+            flecha.setQuantidade(flecha.getQuantidade()-1);
+            exp++;
+        }
+    }
+    
+    public void flecharDwarve(Dwarve anao){
+        atirarFlecha();
+        anao.levaFlechada();
     }
     
     /*public void atirarFlechaRefactory(){
@@ -25,12 +30,24 @@ public class Elfo{
         exp++;
     }*/
     
-    //Getters and Setters
+    //GETTERS AND SETTERS
     public String getNome(){
         return nome;
     }
     
     public void setNome(String n){
         nome = n;
+    }
+    
+    public Item getArco(){
+        return arco;
+    }
+    
+    public Item getFlecha(){
+        return flecha;
+    }
+    
+    public int getExp(){
+        return exp;
     }
 }
