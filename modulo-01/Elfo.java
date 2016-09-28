@@ -21,6 +21,10 @@ public class Elfo{
         anao.perderVida();
     }
     
+    public String toString(){
+        return nome + " possui " + flecha.getQuantidade() + " flechas e " + exp + " níveis de experiência.";
+    }
+    
     /*public void atirarFlechaRefactory(){
         flecha.setQuantidade(flecha.getQuantidade()-1);
         exp++;
