@@ -8,12 +8,8 @@ public class CestoDeLembas{
     }
 
     //METODOS
-    public boolean cestoDivisivel(){
-        if(quantidade >= 4 && quantidade <= 100 && quantidade % 2 == 0){
-            return true;
-        }else{
-            return false;
-        }
+    public boolean podeDividirEmPares(){
+        return quantidade >= 4 && quantidade <= 100 && quantidade % 2 == 0;
     }
     
     //GETTERS AND SETTERS
