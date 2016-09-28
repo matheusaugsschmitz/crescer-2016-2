@@ -89,7 +89,7 @@ public class ElfoTest{
     @Test
     public void elfoToString(){
         Elfo abraan = new Elfo("Abraan");
-        assertEquals("Abraan possui 42 flechas e 0 níveis de experiência.", abraan.toString());
+        assertEquals("Abraan possui 42 flechas e 0 nível de experiência.", abraan.toString());
     }
     
     @Test
@@ -97,7 +97,7 @@ public class ElfoTest{
         Elfo goku = new Elfo("Goku");
         Dwarf kuririn = new Dwarf();
         goku.atirarFlechaEmDwarf(kuririn);
-        assertEquals("Goku possui 41 flechas e 1 níveis de experiência.", goku.toString());
+        assertEquals("Goku possui 41 flechas e 1 nível de experiência.", goku.toString());
     }
     
     @Test
@@ -133,5 +133,15 @@ public class ElfoTest{
         }
         assertEquals("Carmen", transformer.getNome());
         assertEquals(55, transformer.getFlecha().getQuantidade());        
+    }
+    
+    @Test
+    public void elfoToStringCom70FlechasIniciaisDeposDeFlecharDwarf10Vezes(){
+        Elfo japa = new Elfo("Japa Sou", 70);
+        Dwarf anao = new Dwarf();
+        for(int i = 0; i < 10; i++){
+            japa.atirarFlechaEmDwarf(anao);
+        }
+        assertEquals("Japa Sou possui 60 flechas e 10 níveis de experiência.", japa.toString());
     }
 }
