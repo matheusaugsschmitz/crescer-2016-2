@@ -9,6 +9,10 @@ public class Dwarf{
     public Dwarf(String nome, DataTerceiraEra dataNascimento){
         this.nome = nome;
         this.dataNascimento = dataNascimento;
+    }  
+    
+    public Dwarf(){
+        this(null, new DataTerceiraEra(1,1,1));
     }
     
     //METODOS
