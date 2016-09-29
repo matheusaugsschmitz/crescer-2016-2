@@ -92,7 +92,7 @@ public class DwarfTest{
             d.perderVida();
         }
         assertEquals(10, d.getVida());
-        assertEquals(null, d.getStatus());
+        assertEquals(Status.VIVO, d.getStatus());
     }
     
     @Test
