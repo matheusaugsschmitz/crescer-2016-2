@@ -25,7 +25,7 @@ public class Dwarf{
     public double getNumeroSorte(){
         double numero = 101.0;
         if(dataNascimento.ehBissexto() && vida <= 90 && vida >= 80){
-            numero = numero*(-33);
+            numero *= -33;
         }else{
             if(nome.equals("Seixas") || nome.equals("Meireles")){
                 numero = (numero*33)%100;
