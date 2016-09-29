@@ -53,4 +53,34 @@ public class DwarfTest{
         assertEquals(9, anao.getDataNascimento().getMes());
         assertEquals(3016, anao.getDataNascimento().getAno());
     }
+    
+    @Test
+    public void dwarfGetNumeroSorteAno2016(){
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 2016); 
+        Dwarf anao = new Dwarf("Smiggle", data);
+        assertEquals(101.0, anao.getNumeroSorte(), 0);
+    }
+    
+    @Test
+    public void dwarfGetNumeroSorteAno3079(){
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3079); 
+        Dwarf anao = new Dwarf("Smiggle", data);
+        assertEquals(101.0, anao.getNumeroSorte(), 0);
+    }
+    
+    @Test
+    public void dwarfSeixasGetNumeroSorteAno3079(){
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3079); 
+        Dwarf anao = new Dwarf("Seixas", data);
+        assertEquals(33.0, anao.getNumeroSorte(), 0);
+    }
+    
+    @Test
+    public void dwarfSeixasGetNumeroSorteAno2016Com90DeVida(){
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 2016); 
+        Dwarf anao = new Dwarf("Seixas", data);
+        anao.perderVida();
+        anao.perderVida();
+        assertEquals(-3333, anao.getNumeroSorte(), 0);
+    }
 }

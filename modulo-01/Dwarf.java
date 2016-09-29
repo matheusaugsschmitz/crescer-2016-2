@@ -15,6 +15,17 @@ public class Dwarf{
         vida -= 10;
     }
     
+    public double getNumeroSorte(){
+        double numero = 101.0;
+        if(dataNascimento.ehBissexto() && vida <= 90 && vida >= 80){
+            numero = numero*(-33);
+        }else{
+            if(nome == "Seixas" || nome == "Meireles"){
+                numero = (numero*33)%100;
+            }
+        }
+        return numero;
+    }
     
     //GETTERS AND SETTERS
     public int getVida(){
