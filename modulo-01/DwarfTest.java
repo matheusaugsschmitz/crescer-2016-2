@@ -85,4 +85,33 @@ public class DwarfTest{
         assertEquals(0, anao.getExp());
     }
     
+    @Test
+    public void dwarfPerde100DeVida(){
+        Dwarf d = new Dwarf();
+        for(int i = 0; i < 10; i++){
+            d.perderVida();
+        }
+        assertEquals(10, d.getVida());
+        assertEquals(null, d.getStatus());
+    }
+    
+    @Test
+    public void dwarfPerde110DeVida(){
+        Dwarf d = new Dwarf();
+        for(int i = 0; i < 11; i++){
+            d.perderVida();
+        }
+        assertEquals(0, d.getVida());
+        assertEquals(Status.MORTO, d.getStatus());
+    }
+    
+    @Test
+    public void dwarfPerde300DeVida(){
+        Dwarf d = new Dwarf();
+        for(int i = 0; i < 30; i++){
+            d.perderVida();
+        }
+        assertEquals(0, d.getVida());
+        assertEquals(Status.MORTO, d.getStatus());
+    }
 }

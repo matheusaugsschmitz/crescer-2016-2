@@ -4,6 +4,7 @@ public class Dwarf{
     private DataTerceiraEra dataNascimento;
     private String nome;
     private int exp;
+    private Status status;
     
     //CONSTRUTOR
     public Dwarf(String nome, DataTerceiraEra dataNascimento){
@@ -22,7 +23,12 @@ public class Dwarf{
             exp += 2;
         }else{
             if(numero > 100){
-                vida -= 10;
+                if(vida > 10){
+                    vida -= 10;
+                }else{ 
+                    vida = 0;
+                    status = Status.MORTO;
+                }
             }
         }
     }
@@ -54,5 +60,9 @@ public class Dwarf{
     
     public int getExp(){
         return exp;
+    }
+    
+    public Status getStatus(){
+        return status;
     }
 }
