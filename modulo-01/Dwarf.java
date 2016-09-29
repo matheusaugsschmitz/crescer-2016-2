@@ -19,6 +19,11 @@ public class Dwarf{
     
     //METODOS
     public void perderVida(){
+        boolean estaMorto = status.equals(Status.MORTO);
+        if(estaMorto){
+            return;
+        }
+        
         double numero = getNumeroSorte();
         if(numero < 0){
             exp += 2;
