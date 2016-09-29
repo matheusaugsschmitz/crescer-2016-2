@@ -3,6 +3,7 @@ public class Dwarf{
     private int vida = 110;
     private DataTerceiraEra dataNascimento;
     private String nome;
+    private int exp;
     
     //CONSTRUTOR
     public Dwarf(String nome, DataTerceiraEra dataNascimento){
@@ -12,7 +13,13 @@ public class Dwarf{
     
     //METODOS
     public void perderVida(){
-        vida -= 10;
+        if(getNumeroSorte() < 0){
+            exp += 2;
+        }else{
+            if(getNumeroSorte() > 100){
+                vida -= 10;
+            }
+        }
     }
     
     public double getNumeroSorte(){
@@ -38,5 +45,9 @@ public class Dwarf{
     
     public DataTerceiraEra getDataNascimento(){
         return dataNascimento;
+    }
+    
+    public int getExp(){
+        return exp;
     }
 }

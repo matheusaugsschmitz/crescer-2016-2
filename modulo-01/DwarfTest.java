@@ -76,11 +76,13 @@ public class DwarfTest{
     }
     
     @Test
-    public void dwarfSeixasGetNumeroSorteAno2016Com90DeVida(){
+    public void dwarfSeixasGetNumeroSorteAno2016(){//Dwarf imortal
         DataTerceiraEra data = new DataTerceiraEra(1, 9, 2016); 
         Dwarf anao = new Dwarf("Seixas", data);
         anao.perderVida();
         anao.perderVida();
-        assertEquals(-3333, anao.getNumeroSorte(), 0);
+        assertEquals(33, anao.getNumeroSorte(), 0);
+        assertEquals(0, anao.getExp());
     }
+    
 }
