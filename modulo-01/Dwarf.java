@@ -27,7 +27,7 @@ public class Dwarf{
         if(dataNascimento.ehBissexto() && vida <= 90 && vida >= 80){
             numero = numero*(-33);
         }else{
-            if(nome == "Seixas" || nome == "Meireles"){
+            if(nome.equals("Seixas") || nome.equals("Meireles")){
                 numero = (numero*33)%100;
             }
         }
