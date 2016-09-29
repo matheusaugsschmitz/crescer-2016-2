@@ -20,4 +20,12 @@ public class Dwarf{
     public int getVida(){
         return vida;
     }
+    
+    public String getNome(){
+        return nome;
+    }
+    
+    public DataTerceiraEra getDataNascimento(){
+        return dataNascimento;
+    }
 }

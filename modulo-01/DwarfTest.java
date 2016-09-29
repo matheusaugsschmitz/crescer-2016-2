@@ -14,7 +14,7 @@ import org.junit.Test;
 public class DwarfTest{
     
     @Test
-    public void vidaDwarvesAoNascer(){
+    public void vidaDwarfAoNascer(){
         //Arrange
         DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016);        
         //Act
@@ -24,7 +24,7 @@ public class DwarfTest{
     }
     
     @Test
-    public void dwarveLevandoFlechada(){
+    public void dwarfLevandoFlechada(){
         //Arrange
         DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016); 
         Dwarf anao = new Dwarf("Smiggle", data);
@@ -32,5 +32,25 @@ public class DwarfTest{
         anao.perderVida();
         //Assert
         assertEquals(100, anao.getVida());
+    }
+    
+    @Test
+    public void dwarfRecebeNomeEDataNascimento(){
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016); 
+        Dwarf anao = new Dwarf("Smiggle", data);
+        assertEquals("Smiggle", anao.getNome());
+        assertEquals(1, anao.getDataNascimento().getDia());
+        assertEquals(9, anao.getDataNascimento().getMes());
+        assertEquals(3016, anao.getDataNascimento().getAno());
+    }
+    
+    @Test
+    public void dwarfSemNomeRecebeDataNascimento(){
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016); 
+        Dwarf anao = new Dwarf("", data);
+        assertEquals("", anao.getNome());
+        assertEquals(1, anao.getDataNascimento().getDia());
+        assertEquals(9, anao.getDataNascimento().getMes());
+        assertEquals(3016, anao.getDataNascimento().getAno());
     }
 }
