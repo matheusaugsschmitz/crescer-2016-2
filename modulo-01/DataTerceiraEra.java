@@ -11,7 +11,7 @@ public class DataTerceiraEra{
     
     //METODOS
     public boolean ehBissexto(){
-        return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+        return ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0;
     }
     
     //GETTERS

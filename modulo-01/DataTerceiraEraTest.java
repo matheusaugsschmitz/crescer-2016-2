@@ -39,8 +39,7 @@ public class DataTerceiraEraTest{
     
     @Test
     public void ehBissexto1004(){
-        DataTerceiraEra data = new DataTerceiraEra(29, 02, 1004);
-        assertTrue(data.ehBissexto());
+        assertTrue(new DataTerceiraEra(29, 02, 1004).ehBissexto());
     }
     
     @Test
