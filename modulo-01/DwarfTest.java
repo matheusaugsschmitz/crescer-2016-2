@@ -114,4 +114,9 @@ public class DwarfTest{
         assertEquals(0, d.getVida());
         assertEquals(Status.MORTO, d.getStatus());
     }
+    
+    @Test
+    public void dwarfNasceVivo(){
+        assertEquals(Status.VIVO, new Dwarf().getStatus());
+    }
 }
