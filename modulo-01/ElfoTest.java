@@ -151,4 +151,10 @@ public class ElfoTest{
         }
         assertEquals("Japa Sou possui 60 flechas e 10 níveis de experiência.", japa.toString());
     }
+    
+    @Test
+    public void elfoNasceVivo(){
+        Elfo n = new Elfo("Cobaia");
+        assertEquals(Status.VIVO, n.getStatus());
+    }
 }

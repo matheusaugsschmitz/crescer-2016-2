@@ -4,6 +4,8 @@ public class Elfo{
     private Item arco;
     private Item flecha;
     private int exp;
+    private Status status;
+    
     
     //CONSTRUTOR
     public Elfo(String n){
@@ -15,6 +17,7 @@ public class Elfo{
         nome = n;
         arco = new Item("Arco", 1);
         flecha = new Item("Flecha", q >= 0 ? q : 42);
+        status = Status.VIVO;
     }
     
     //METODOS    
@@ -56,5 +59,9 @@ public class Elfo{
     
     public int getExp(){
         return exp;
+    }
+    
+    public Status getStatus(){
+        return status;
     }
 }
