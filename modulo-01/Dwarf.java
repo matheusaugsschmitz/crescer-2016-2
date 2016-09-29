@@ -13,10 +13,11 @@ public class Dwarf{
     
     //METODOS
     public void perderVida(){
-        if(getNumeroSorte() < 0){
+        double numero = getNumeroSorte();
+        if(numero < 0){
             exp += 2;
         }else{
-            if(getNumeroSorte() > 100){
+            if(numero > 100){
                 vida -= 10;
             }
         }
