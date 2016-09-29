@@ -54,8 +54,9 @@ public class ElfoTest{
     public void elfoAtiraFlecha(){
         //Arrange
         Elfo elfo = new Elfo("Robin Wood");
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016);
         //Act
-        elfo.atirarFlechaEmDwarf(new Dwarf());
+        elfo.atirarFlechaEmDwarf(new Dwarf("Tyrion", data));
         //Assert
         assertEquals(41, elfo.getFlecha().getQuantidade());
         assertEquals(1, elfo.getExp());
@@ -65,9 +66,10 @@ public class ElfoTest{
     public void elfoAtira40Flechas(){
         //Arrange
         Elfo elfo = new Elfo("Judas");
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016);
         //Act
         for(int i = 0; i < 40; i++){
-            elfo.atirarFlechaEmDwarf(new Dwarf());
+            elfo.atirarFlechaEmDwarf(new Dwarf("Tyrion", data));
         }
         //Assert
         assertEquals(2, elfo.getFlecha().getQuantidade());
@@ -78,7 +80,8 @@ public class ElfoTest{
     public void elfoAtiraFlechaEmDwarf(){
         //Arrange
         Elfo elfo = new Elfo("Caçador de Anões");
-        Dwarf anao = new Dwarf();
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016);
+        Dwarf anao = new Dwarf("Tyrion", data);
         //Act
         elfo.atirarFlechaEmDwarf(anao);
         //Assert
@@ -95,7 +98,8 @@ public class ElfoTest{
     @Test
     public void elfoToStringDepoisDeAtirarFlecha(){
         Elfo goku = new Elfo("Goku");
-        Dwarf kuririn = new Dwarf();
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016);
+        Dwarf kuririn = new Dwarf("Tyrion", data);
         goku.atirarFlechaEmDwarf(kuririn);
         assertEquals("Goku possui 41 flechas e 1 nível de experiência.", goku.toString());
     }
@@ -103,7 +107,8 @@ public class ElfoTest{
     @Test
     public void elfoToStringDepoisDeAtirar10Flechas(){
         Elfo goku = new Elfo("Goku");
-        Dwarf kuririn = new Dwarf();
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016);        
+        Dwarf kuririn = new Dwarf("Tyrion", data);
         for(int i = 0; i < 10; i++){
             goku.atirarFlechaEmDwarf(kuririn);
         }
@@ -127,7 +132,8 @@ public class ElfoTest{
     @Test
     public void elfoNasceCom70FlechasEAtira12EmDwarf(){
         Elfo transformer = new Elfo("Carmen", 70);
-        Dwarf anao = new Dwarf();
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016);
+        Dwarf anao = new Dwarf("Tyrion", data);
         for(int i = 0; i < 15; i++){
             transformer.atirarFlechaEmDwarf(anao);
         }
@@ -138,7 +144,8 @@ public class ElfoTest{
     @Test
     public void elfoToStringCom70FlechasIniciaisDeposDeFlecharDwarf10Vezes(){
         Elfo japa = new Elfo("Japa Sou", 70);
-        Dwarf anao = new Dwarf();
+        DataTerceiraEra data = new DataTerceiraEra(1, 9, 3016);
+        Dwarf anao = new Dwarf("Tyrion", data);
         for(int i = 0; i < 10; i++){
             japa.atirarFlechaEmDwarf(anao);
         }
