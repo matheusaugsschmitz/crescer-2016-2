@@ -132,4 +132,20 @@ public class InventarioTest
         assertEquals("Evo XVIII", inv.itemMaisPopular().getDescricao());
         assertEquals(16, inv.itemMaisPopular().getQuantidade());
     }
+    
+    @Test
+    public void ordenar3Itens(){
+        Inventario inv = new Inventario();
+        inv.adicionarItem(new Item("Groot", 17));
+        inv.adicionarItem(new Item("Espelho", 9));
+        inv.adicionarItem(new Item("Machado", 2));
+        inv.ordenarItens();
+        ArrayList<Item> itensEmOrdem = new ArrayList<>();
+        itensEmOrdem.add(new Item("Machado", 2));
+        itensEmOrdem.add(new Item("Espelho", 9));
+        itensEmOrdem.add(new Item("Groot", 17));
+        //assertEquals(itensEmOrdem.get(0).getQuantidade(), inv.getItens().get(0).getQuantidade());
+        assertEquals(itensEmOrdem.get(1).getQuantidade(), inv.getItens().get(1).getQuantidade());
+        assertEquals(itensEmOrdem.get(2).getQuantidade(), inv.getItens().get(2).getQuantidade());
+    }
 }
