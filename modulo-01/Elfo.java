@@ -23,7 +23,7 @@ public class Elfo{
     
     //METODOS    
     public void atirarFlechaEmDwarf(Dwarf anao){
-        ArrayList<Item> itens = inventario.itens();
+        ArrayList<Item> itens = inventario.getItens();
         if(itens.get(1).getQuantidade() > 0){
             itens.get(1).setQuantidade(itens.get(1).getQuantidade()-1);
             exp++;
@@ -32,9 +32,9 @@ public class Elfo{
     }
     
     public String toString(){
-        boolean flechaNoSingular = inventario.itens().get(1).getQuantidade() == 1;
+        boolean flechaNoSingular = inventario.getItens().get(1).getQuantidade() == 1;
         boolean nivelUm = exp == 1 || exp == 0;
-        return String.format("%s possui %d flecha%s e %d níve%s de experiência.", nome, inventario.itens().get(1).getQuantidade(), flechaNoSingular ? "" : "s", exp, nivelUm ? "l" : "is");
+        return String.format("%s possui %d flecha%s e %d níve%s de experiência.", nome, inventario.getItens().get(1).getQuantidade(), flechaNoSingular ? "" : "s", exp, nivelUm ? "l" : "is");
     }
     
     /*public void atirarFlechaRefactory(){
@@ -52,11 +52,11 @@ public class Elfo{
     }
     
     public Item getArco(){
-        return inventario.itens().get(0);
+        return inventario.getItens().get(0);
     }
     
     public Item getFlecha(){
-        return inventario.itens().get(1);
+        return inventario.getItens().get(1);
     }
     
     public int getExp(){

@@ -19,9 +19,9 @@ public class InventarioTest
         Inventario inv = new Inventario();
         Item item1 = new Item("Machado", 1);
         inv.adicionarItem(item1);
-        assertEquals(1, inv.itens().size());
-        assertEquals("Machado", inv.itens().get(0).getDescricao());
-        assertEquals(1, inv.itens().get(0).getQuantidade());
+        assertEquals(1, inv.getItens().size());
+        assertEquals("Machado", inv.getItens().get(0).getDescricao());
+        assertEquals(1, inv.getItens().get(0).getQuantidade());
     }
     
     @Test
@@ -30,7 +30,7 @@ public class InventarioTest
         for(int i = 0; i < 7; i++){
             inv.adicionarItem(new Item("Machado", 1));            
         }
-        ArrayList<Item> it = inv.itens();
+        ArrayList<Item> it = inv.getItens();
         assertEquals(7, it.size());
         for(int i = 0; i < 7; i++){
             assertEquals("Machado", it.get(i).getDescricao());
@@ -44,7 +44,7 @@ public class InventarioTest
         for(int i = 0; i < 82; i++){
             inv.adicionarItem(new Item("Machado", 1));            
         }
-        ArrayList<Item> it = inv.itens();
+        ArrayList<Item> it = inv.getItens();
         assertEquals(82, it.size());
         for(int i = 0; i < 82; i++){
             assertEquals("Machado", it.get(i).getDescricao());
@@ -58,7 +58,7 @@ public class InventarioTest
         Item item1 = new Item("Machado", 1);
         inv.adicionarItem(item1);
         inv.removerItem(item1);
-        assertEquals(0, inv.itens().size());
+        assertEquals(0, inv.getItens().size());
     }
     
     @Test
@@ -70,7 +70,7 @@ public class InventarioTest
         for(int i = 0; i < 7; i++){
             inv.removerItem(new Item("Machado", 1));            
         }
-        assertEquals(5, inv.itens().size());
+        assertEquals(5, inv.getItens().size());
     }
     @Test
     public void remove3ItensDiferentesDe9Itens(){
@@ -82,10 +82,10 @@ public class InventarioTest
         for(int i = 0; i < 3; i++){
             inv.removerItem(new Item(itens[i], 1));            
         }
-        assertEquals(6, inv.itens().size());
+        assertEquals(6, inv.getItens().size());
         for(int i = 0; i < 6; i++){
-            assertEquals(itens[i+3], inv.itens().get(i).getDescricao());
-            assertEquals(1, inv.itens().get(i).getQuantidade());
+            assertEquals(itens[i+3], inv.getItens().get(i).getDescricao());
+            assertEquals(1, inv.getItens().get(i).getQuantidade());
         }
     }
     
@@ -113,7 +113,7 @@ public class InventarioTest
         for(int i = 0; i < 82; i++){
             inv.adicionarItem(new Item("Machado", 1));            
         }
-        ArrayList<Item> it = inv.itens();
+        ArrayList<Item> it = inv.getItens();
         assertEquals(82, it.size());
         String oitentaEDoisMachados = "Machado";
         for(int i = 0; i < 81; i++){

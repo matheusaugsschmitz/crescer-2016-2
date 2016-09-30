@@ -42,7 +42,7 @@ public class Inventario{
     }
     
     //GETTERS
-    public ArrayList<Item> itens(){
+    public ArrayList<Item> getItens(){
         return itens;
     }
 }

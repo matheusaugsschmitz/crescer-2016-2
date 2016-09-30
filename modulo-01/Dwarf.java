@@ -56,9 +56,9 @@ public class Dwarf{
     
     public void tentarSorte(){
         if(getNumeroSorte() == -3333.0){
-            ArrayList<Item> itens = inventario.itens();
+            ArrayList<Item> itens = inventario.getItens();
             for(int i = 0; i < itens.size(); i++){
-                inventario.itens().get(i).setQuantidade(itens.get(i).getQuantidade()+1000);
+                inventario.getItens().get(i).setQuantidade(itens.get(i).getQuantidade()+1000);
             }
         }
     }
