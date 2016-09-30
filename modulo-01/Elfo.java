@@ -23,9 +23,9 @@ public class Elfo{
     
     //METODOS    
     public void atirarFlechaEmDwarf(Dwarf anao){
-        ArrayList<Item> itens = inventario.getItens();
-        if(itens.get(1).getQuantidade() > 0){
-            itens.get(1).setQuantidade(itens.get(1).getQuantidade()-1);
+        int quantidadeFlechas = getFlecha().getQuantidade();
+        if(quantidadeFlechas > 0){
+            getFlecha().setQuantidade(quantidadeFlechas-1);
             exp++;
         }
         anao.perderVida();
