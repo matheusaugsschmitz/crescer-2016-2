@@ -20,7 +20,15 @@ public class Inventario{
                 itens.remove(i);
                 break;
             }
-        }    
+        }
+    }
+    
+    public String getDescricoesItens(){
+        String retorno = "";
+        for(int i = 0; i < itens.size(); i++){
+            retorno += i > 0 ? "," + itens.get(i).getDescricao() : itens.get(i).getDescricao();
+        }
+        return retorno;
     }
     
     //GETTERS

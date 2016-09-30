@@ -88,4 +88,37 @@ public class InventarioTest
             assertEquals(1, inv.itens().get(i).getQuantidade());
         }
     }
+    
+    @Test
+    public void getDescricaoDeUmItem(){
+        Inventario inv = new Inventario();
+        Item item1 = new Item("Machado", 1);
+        inv.adicionarItem(item1);
+        assertEquals("Machado", inv.getDescricoesItens());
+    }
+    
+    @Test
+    public void getDescricaoDe7Itens(){
+        Inventario inv = new Inventario();
+        String[] itens = {"Machado", "Escudo", "M1-Abrams", "Barret M107", "Preisteixon", "Jogo da Vida", "Evo XVIII"};
+        for(int i = 0; i < 7; i++){
+            inv.adicionarItem(new Item(itens[i], 1));            
+        }
+        assertEquals("Machado,Escudo,M1-Abrams,Barret M107,Preisteixon,Jogo da Vida,Evo XVIII", inv.getDescricoesItens());
+    }
+    
+    @Test
+    public void getDescricaoDe82Itens(){
+        Inventario inv = new Inventario();
+        for(int i = 0; i < 82; i++){
+            inv.adicionarItem(new Item("Machado", 1));            
+        }
+        ArrayList<Item> it = inv.itens();
+        assertEquals(82, it.size());
+        String oitentaEDoisMachados = "Machado";
+        for(int i = 0; i < 81; i++){
+            oitentaEDoisMachados += ",Machado";
+        }
+        assertEquals(oitentaEDoisMachados, inv.getDescricoesItens());
+    }
 }
