@@ -1,10 +1,10 @@
+import java.util.ArrayList;
 public class Elfo{
     //ATRIBUTOS
     private String nome;
-    private Item arco;
-    private Item flecha;
     private int exp;
     private Status status;
+    private Inventario inventario;
     
     
     //CONSTRUTOR
@@ -15,24 +15,26 @@ public class Elfo{
     
     public Elfo(String n, int q){
         nome = n;
-        arco = new Item("Arco", 1);
-        flecha = new Item("Flecha", q >= 0 ? q : 42);
+        inventario = new Inventario();
+        inventario.adicionarItem(new Item("Arco", 1));
+        inventario.adicionarItem(new Item("Flecha", q >= 0 ? q : 42));
         status = Status.VIVO;
     }
     
     //METODOS    
     public void atirarFlechaEmDwarf(Dwarf anao){
-        if(flecha.getQuantidade() > 0){
-            flecha.setQuantidade(flecha.getQuantidade()-1);
+        ArrayList<Item> itens = inventario.itens();
+        if(itens.get(1).getQuantidade() > 0){
+            itens.get(1).setQuantidade(itens.get(1).getQuantidade()-1);
             exp++;
         }
         anao.perderVida();
     }
     
     public String toString(){
-        boolean flechaNoSingular = flecha.getQuantidade() == 1;
+        boolean flechaNoSingular = inventario.itens().get(1).getQuantidade() == 1;
         boolean nivelUm = exp == 1 || exp == 0;
-        return String.format("%s possui %d flecha%s e %d níve%s de experiência.", nome, flecha.getQuantidade(), flechaNoSingular ? "" : "s", exp, nivelUm ? "l" : "is");
+        return String.format("%s possui %d flecha%s e %d níve%s de experiência.", nome, inventario.itens().get(1).getQuantidade(), flechaNoSingular ? "" : "s", exp, nivelUm ? "l" : "is");
     }
     
     /*public void atirarFlechaRefactory(){
@@ -50,11 +52,11 @@ public class Elfo{
     }
     
     public Item getArco(){
-        return arco;
+        return inventario.itens().get(0);
     }
     
     public Item getFlecha(){
-        return flecha;
+        return inventario.itens().get(1);
     }
     
     public int getExp(){
