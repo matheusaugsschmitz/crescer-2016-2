@@ -26,7 +26,8 @@ public class Inventario{
     public String getDescricoesItens(){
         String retorno = "";
         for(int i = 0; i < itens.size(); i++){
-            retorno += i > 0 ? "," + itens.get(i).getDescricao() : itens.get(i).getDescricao();
+            Item itemAtual = itens.get(i);
+            retorno += (i > 0 ? "," : "") + itemAtual.getDescricao();
         }
         return retorno;
     }
