@@ -5,12 +5,14 @@ public class Dwarf{
     private String nome;
     private int exp;
     private Status status;
+    private Inventario inventario;
     
     //CONSTRUTOR
     public Dwarf(String nome, DataTerceiraEra dataNascimento){
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.status = Status.VIVO;
+        this.inventario = new Inventario();
     }  
     
     public Dwarf(){
@@ -51,6 +53,14 @@ public class Dwarf{
         return numero;
     }
     
+    public void adicionarItem(Item item){
+        inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item){
+        inventario.removerItem(item);
+    }
+    
     //GETTERS AND SETTERS
     public int getVida(){
         return vida;
@@ -70,5 +80,9 @@ public class Dwarf{
     
     public Status getStatus(){
         return status;
+    }
+    
+    public Inventario getInventario(){
+        return inventario;
     }
 }

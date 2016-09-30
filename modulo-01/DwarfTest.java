@@ -119,4 +119,38 @@ public class DwarfTest{
     public void dwarfNasceVivo(){
         assertEquals(Status.VIVO, new Dwarf().getStatus());
     }
+    
+    @Test
+    public void dwarfNasceComInventarioEAdicionaTrabuco(){
+        Dwarf d = new Dwarf();
+        d.adicionarItem(new Item("Trabuco", 1));
+        assertEquals("Trabuco", d.getInventario().itens().get(0).getDescricao());
+        assertEquals(1, d.getInventario().itens().get(0).getQuantidade());
+    }
+    
+    @Test
+    public void dwarfNasceComInventarioEAdiciona3Armas(){
+        Dwarf d = new Dwarf();
+        d.adicionarItem(new Item("Trabuco", 1));
+        d.adicionarItem(new Item("MBT Law", 12));
+        d.adicionarItem(new Item("Fênix", 32));
+        assertEquals("Trabuco", d.getInventario().itens().get(0).getDescricao());
+        assertEquals("MBT Law", d.getInventario().itens().get(1).getDescricao());
+        assertEquals("Fênix", d.getInventario().itens().get(2).getDescricao());
+        assertEquals(1, d.getInventario().itens().get(0).getQuantidade());
+        assertEquals(12, d.getInventario().itens().get(1).getQuantidade());
+        assertEquals(32, d.getInventario().itens().get(2).getQuantidade());
+    }
+    
+    @Test
+    public void dwarfMacGyverNasceComInventarioETransformaClipEGomaDeMascarEmBomba(){
+        Dwarf d = new Dwarf();
+        d.adicionarItem(new Item("Clip de papel", 1));
+        d.adicionarItem(new Item("Goma de mascar", 1));
+        d.perderItem(new Item("Clip de papel", 1));
+        d.perderItem(new Item("Goma de mascar", 1));
+        d.adicionarItem(new Item("Bomba Relógio", 1));
+        assertEquals("Bomba Relógio", d.getInventario().itens().get(0).getDescricao());
+        assertEquals(1, d.getInventario().itens().get(0).getQuantidade());
+    }
 }
