@@ -31,6 +31,16 @@ public class Inventario{
         return retorno;
     }
     
+    public Item itemMaisPopular(){
+        Item maiorQnt = new Item(null, 0);
+        for(int i = 0; i < itens.size(); i++){
+            if(itens.get(i).getQuantidade() > maiorQnt.getQuantidade()){
+                maiorQnt = itens.get(i);
+            }
+        }
+        return maiorQnt;
+    }
+    
     //GETTERS
     public ArrayList<Item> itens(){
         return itens;

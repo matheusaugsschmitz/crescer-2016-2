@@ -121,4 +121,15 @@ public class InventarioTest
         }
         assertEquals(oitentaEDoisMachados, inv.getDescricoesItens());
     }
+    
+    @Test
+    public void itemMaisPopularDe7Itens(){
+        Inventario inv = new Inventario();
+        String[] itens = {"Machado", "Escudo", "M1-Abrams", "Barret M107", "Preisteixon", "Jogo da Vida", "Evo XVIII"};
+        for(int i = 0; i < 7; i++){
+            inv.adicionarItem(new Item(itens[i], i+10));            
+        }
+        assertEquals("Evo XVIII", inv.itemMaisPopular().getDescricao());
+        assertEquals(16, inv.itemMaisPopular().getQuantidade());
+    }
 }
