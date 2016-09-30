@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Dwarf{
     //ATRIBUTOS
     private int vida = 110;
@@ -51,6 +52,15 @@ public class Dwarf{
             }
         }
         return numero;
+    }
+    
+    public void tentarSorte(){
+        if(getNumeroSorte() == -3333.0){
+            ArrayList<Item> itens = inventario.itens();
+            for(int i = 0; i < itens.size(); i++){
+                inventario.itens().get(i).setQuantidade(itens.get(i).getQuantidade()+1000);
+            }
+        }
     }
     
     public void adicionarItem(Item item){

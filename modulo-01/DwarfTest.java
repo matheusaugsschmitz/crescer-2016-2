@@ -153,4 +153,28 @@ public class DwarfTest{
         assertEquals("Bomba Relógio", d.getInventario().itens().get(0).getDescricao());
         assertEquals(1, d.getInventario().itens().get(0).getQuantidade());
     }
+    
+    @Test
+    public void dwarfLeprechaunTentandoSorteComMachadoEEscudo(){
+        Dwarf d = new Dwarf("CJ", new DataTerceiraEra(1, 1, 2016));
+        d.perderVida();
+        d.perderVida();
+        d.adicionarItem(new Item("Machado", 1));
+        d.adicionarItem(new Item("Escudo", 1));
+        d.tentarSorte();
+        assertEquals(1001, d.getInventario().itens().get(0).getQuantidade());
+        assertEquals(1001, d.getInventario().itens().get(1).getQuantidade());
+    }
+    
+    @Test
+    public void dwarfNormalTentandoSorteComMachadoEEscudo(){
+        Dwarf d = new Dwarf("CJ", new DataTerceiraEra(1, 1, 1900));
+        d.perderVida();
+        d.perderVida();
+        d.adicionarItem(new Item("Machado", 1));
+        d.adicionarItem(new Item("Escudo", 1));
+        d.tentarSorte();
+        assertEquals(1, d.getInventario().itens().get(0).getQuantidade());
+        assertEquals(1, d.getInventario().itens().get(1).getQuantidade());
+    }
 }
