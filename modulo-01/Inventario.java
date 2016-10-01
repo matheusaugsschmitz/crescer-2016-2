@@ -43,16 +43,23 @@ public class Inventario{
     }
     
     public void ordenarItens(){
-        ArrayList<Item> novaOrdem = new ArrayList<>();
+        ArrayList<Item> novaOrdem = new ArrayList<>(itens.size());
         for(int i = 0; i < itens.size(); i++){
             int indice = 0;
+            int indiceAnterior = 0;
+            if(i - 1 >= 0){ indiceAnterior = i - 1; }else{ indiceAnterior = 0; }
             for(int i1 = 0; i1 < itens.size(); i1++){
-                if(itens.get(i1).getQuantidade() <= itens.get(indice).getQuantidade() && itens.get(i1).getQuantidade() >= 0){
-                    indice = i1;
+                if(itens.get(i1).getQuantidade() <= itens.get(indice).getQuantidade()){
+                    if(!novaOrdem.isEmpty()){
+                        if(itens.get(i1).getQuantidade() >= novaOrdem.get(indiceAnterior).getQuantidade() && !itens.get(i1).getDescricao().equals(novaOrdem.get(indiceAnterior).getDescricao())){
+                            indice = i1;
+                        }
+                    }else{
+                        indice = i1;
+                    }
                 }
             }
             novaOrdem.add(itens.get(indice));
-            itens.get(indice).setQuantidade(-1);
         }
         itens = novaOrdem;
     }

@@ -1,10 +1,9 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
+
 
 /**
  * The test class InventarioTest.
@@ -144,8 +143,17 @@ public class InventarioTest
         itensEmOrdem.add(new Item("Machado", 2));
         itensEmOrdem.add(new Item("Espelho", 9));
         itensEmOrdem.add(new Item("Groot", 17));
-        //assertEquals(itensEmOrdem.get(0).getQuantidade(), inv.getItens().get(0).getQuantidade());
+        assertEquals(itensEmOrdem.get(0).getQuantidade(), inv.getItens().get(0).getQuantidade());
         assertEquals(itensEmOrdem.get(1).getQuantidade(), inv.getItens().get(1).getQuantidade());
         assertEquals(itensEmOrdem.get(2).getQuantidade(), inv.getItens().get(2).getQuantidade());
+    }
+    public void ordenar12ItensComQuantidadesDiferentes(){
+        Inventario inv = new Inventario();
+        String[] nomeItens = {"Machado", "Escudo", "Pederneira", "Pexera", "Exp Boost I", "Armadilha para Lagosta", "Pipa", "Skill book", "Uno Mile", "Escada", "Parafina", "Jarro"};
+        for(int i = nomeItens.length; i > 0; i--){
+            inv.adicionarItem(new Item(nomeItens[i], i));
+        }
+        inv.ordenarItens();
+        assertEquals("Machado,Escudo,Pederneira,Pexera,Exp Boost I,Armadilha para Lagosta,Pipa,Skill book,Uno Mile,Escada,Parafina,Jarro", inv.getDescricoesItens());
     }
 }
