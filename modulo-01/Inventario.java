@@ -64,6 +64,23 @@ public class Inventario{
         itens = novaOrdem;
     }
     
+    public void aumentarUnidadesDosItens(int unidades){
+        for (Item item : itens) {
+            item.aumentarUnidades(unidades);
+        }
+    }
+    
+    public void aumentarSomatorialUnidadesDosItens(){
+        for (Item item : itens) {
+            int unidades = item.getQuantidade();
+            if(unidades < 0){unidades *= -1;}
+            for(int i = unidades-1; i > 0; i--){
+                unidades += i;
+            }    
+            item.aumentarUnidades(unidades*1000);
+        }
+    }
+    
     //GETTERS
     public ArrayList<Item> getItens(){
         return itens;

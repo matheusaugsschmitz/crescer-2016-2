@@ -10,7 +10,9 @@ public class Item{
     }
     
     //METODOS
-    
+    public void aumentarUnidades(int unidades) {
+        quantidade += unidades;
+    }
     
     //GETTERS AND SETTERS
     public void setQuantidade(int q){
