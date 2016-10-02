@@ -138,22 +138,39 @@ public class InventarioTest
         inv.adicionarItem(new Item("Groot", 17));
         inv.adicionarItem(new Item("Espelho", 9));
         inv.adicionarItem(new Item("Machado", 2));
-        inv.ordenarItens();
-        ArrayList<Item> itensEmOrdem = new ArrayList<>();
-        itensEmOrdem.add(new Item("Machado", 2));
-        itensEmOrdem.add(new Item("Espelho", 9));
-        itensEmOrdem.add(new Item("Groot", 17));
-        assertEquals(itensEmOrdem.get(0).getQuantidade(), inv.getItens().get(0).getQuantidade());
-        assertEquals(itensEmOrdem.get(1).getQuantidade(), inv.getItens().get(1).getQuantidade());
-        assertEquals(itensEmOrdem.get(2).getQuantidade(), inv.getItens().get(2).getQuantidade());
+        inv.ordenarItensAscendente();
+        assertEquals("Machado,Espelho,Groot", inv.getDescricoesItens());
     }
+    
     public void ordenar12ItensComQuantidadesDiferentes(){
         Inventario inv = new Inventario();
         String[] nomeItens = {"Machado", "Escudo", "Pederneira", "Pexera", "Exp Boost I", "Armadilha para Lagosta", "Pipa", "Skill book", "Uno Mile", "Escada", "Parafina", "Jarro"};
         for(int i = nomeItens.length; i > 0; i--){
             inv.adicionarItem(new Item(nomeItens[i], i));
         }
-        inv.ordenarItens();
+        inv.ordenarItensAscendente();
         assertEquals("Machado,Escudo,Pederneira,Pexera,Exp Boost I,Armadilha para Lagosta,Pipa,Skill book,Uno Mile,Escada,Parafina,Jarro", inv.getDescricoesItens());
     }
+    
+    @Test
+    public void ordenacaoDescendenteDe3Itens(){
+        Inventario inv = new Inventario();
+        inv.adicionarItem(new Item("Groot", 17));
+        inv.adicionarItem(new Item("Espelho", 9));
+        inv.adicionarItem(new Item("Machado", 2));
+        inv.ordenarItens(TipoOrdenacao.DESCENDENTE);
+        assertEquals("Groot,Espelho,Machado", inv.getDescricoesItens());
+        
+    }
+    
+    public void ordenacaoDescendenteDe12ItensComQuantidadesDiferentes(){
+        Inventario inv = new Inventario();
+        String[] nomeItens = {"Machado", "Escudo", "Pederneira", "Pexera", "Exp Boost I", "Armadilha para Lagosta", "Pipa", "Skill book", "Uno Mile", "Escada", "Parafina", "Jarro"};
+        for(int i = nomeItens.length; i > 0; i--){
+            inv.adicionarItem(new Item(nomeItens[i], i));
+        }
+        inv.ordenarItens(TipoOrdenacao.DESCENDENTE);
+        assertEquals("Jarro,Parafina,Escada,Uno Mile,Skill book,Pipa,Armadilha para Lagosta,Exp Boost I,Pexera,Pederneira,Escudo,Machado", inv.getDescricoesItens());
+    }
+    
 }
