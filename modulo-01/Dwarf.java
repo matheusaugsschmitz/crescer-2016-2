@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 public class Dwarf{
     //ATRIBUTOS
-    private int vida = 110;
-    private DataTerceiraEra dataNascimento;
-    private String nome;
-    private int exp;
-    private Status status;
-    private Inventario inventario;
+    protected int vida = 110;
+    protected DataTerceiraEra dataNascimento;
+    protected String nome;
+    protected int exp;
+    protected Status status;
+    protected Inventario inventario;
     
     //CONSTRUTOR
     public Dwarf(String nome, DataTerceiraEra dataNascimento){
@@ -56,10 +56,7 @@ public class Dwarf{
     
     public void tentarSorte(){
         if(getNumeroSorte() == -3333.0){
-            ArrayList<Item> itens = inventario.getItens();
-            for(int i = 0; i < itens.size(); i++){
-                inventario.getItens().get(i).setQuantidade(itens.get(i).getQuantidade()+1000);
-            }
+            inventario.aumentarUnidadesDosItens(1000);
         }
     }
     
