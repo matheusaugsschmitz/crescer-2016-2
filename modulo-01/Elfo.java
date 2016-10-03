@@ -1,10 +1,6 @@
 import java.util.ArrayList;
-public class Elfo{
+public class Elfo extends Personagem{
     //ATRIBUTOS
-    private String nome;
-    private int exp;
-    private Status status;
-    private Inventario inventario;
     
     
     //CONSTRUTOR
@@ -13,12 +9,10 @@ public class Elfo{
         this(n, 42);
     }
     
-    public Elfo(String n, int q){
-        nome = n;
-        inventario = new Inventario();
+    public Elfo(String nome, int quantidade){
+        super(nome);
         inventario.adicionarItem(new Item("Arco", 1));
-        inventario.adicionarItem(new Item("Flecha", q >= 0 ? q : 42));
-        status = Status.VIVO;
+        inventario.adicionarItem(new Item("Flecha", quantidade >= 0 ? quantidade : 42));
     }
     
     //METODOS    
@@ -42,28 +36,12 @@ public class Elfo{
         exp++;
     }*/
     
-    //GETTERS AND SETTERS
-    public String getNome(){
-        return nome;
-    }
-    
-    public void setNome(String n){
-        nome = n;
-    }
-    
+    //GETTERS AND SETTERS    
     public Item getArco(){
         return inventario.getItens().get(0);
     }
     
     public Item getFlecha(){
         return inventario.getItens().get(1);
-    }
-    
-    public int getExp(){
-        return exp;
-    }
-    
-    public Status getStatus(){
-        return status;
     }
 }
