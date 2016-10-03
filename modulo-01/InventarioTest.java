@@ -138,7 +138,7 @@ public class InventarioTest
         inv.adicionarItem(new Item("Groot", 17));
         inv.adicionarItem(new Item("Espelho", 9));
         inv.adicionarItem(new Item("Machado", 2));
-        inv.ordenarItensAscendente();
+        inv.ordenarItens();
         assertEquals("Machado,Espelho,Groot", inv.getDescricoesItens());
     }
     
@@ -148,7 +148,7 @@ public class InventarioTest
         for(int i = nomeItens.length; i > 0; i--){
             inv.adicionarItem(new Item(nomeItens[i], i));
         }
-        inv.ordenarItensAscendente();
+        inv.ordenarItens();
         assertEquals("Machado,Escudo,Pederneira,Pexera,Exp Boost I,Armadilha para Lagosta,Pipa,Skill book,Uno Mile,Escada,Parafina,Jarro", inv.getDescricoesItens());
     }
     
