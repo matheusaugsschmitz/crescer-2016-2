@@ -18,7 +18,7 @@ public class HobbitContador{
         return somaDiferenca;
     }    
     
-    public ArrayList<Integer> calcularProdutos(){
+    private ArrayList<Integer> calcularProdutos(){
         ArrayList<Integer> produtos = new ArrayList<>();
         for(int i = 0; i < pares.size(); i++){
             produtos.add(pares.get(i).get(0) * pares.get(i).get(1));
@@ -26,7 +26,7 @@ public class HobbitContador{
         return produtos;
     }
     
-    public ArrayList<Integer> calcularImc(){
+    private ArrayList<Integer> calcularImc(){
         ArrayList<Integer> mmcs = new ArrayList<>();
         for(int i = 0; i < pares.size(); i++){
             int mmc = 1;
