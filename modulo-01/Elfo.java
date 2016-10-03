@@ -37,6 +37,7 @@ public class Elfo extends Personagem{
     }*/
     
     //GETTERS AND SETTERS    
+    
     public Item getArco(){
         return inventario.getItens().get(0);
     }

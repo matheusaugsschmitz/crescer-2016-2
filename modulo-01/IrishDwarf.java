@@ -7,10 +7,7 @@ import java.util.ArrayList;
  */
 public class IrishDwarf extends Dwarf{
     public IrishDwarf(String nome, DataTerceiraEra dataNascimento){
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
-        this.status = Status.VIVO;
-        this.inventario = new Inventario();
+        super(nome, dataNascimento);
     }  
     
     public IrishDwarf(){
