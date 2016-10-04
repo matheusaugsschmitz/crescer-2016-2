@@ -54,14 +54,6 @@ public class Dwarf extends Personagem{
         }
     }
     
-    public void adicionarItem(Item item){
-        inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item){
-        inventario.removerItem(item);
-    }
-    
     //GETTERS AND SETTERS
     public int getVida(){
         return vida;
