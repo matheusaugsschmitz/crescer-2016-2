@@ -22,7 +22,7 @@ public class Elfo extends Personagem{
     }
     
     //Com multiplicador de xp
-    public void atirarFlechaEmDwarf(Dwarf anao, int multiplicador){
+    protected void atirarFlechaEmDwarf(Dwarf anao, int multiplicador){
         int quantidadeFlechas = getFlecha().getQuantidade();
         if(quantidadeFlechas > 0){
             getFlecha().setQuantidade(quantidadeFlechas-1);
