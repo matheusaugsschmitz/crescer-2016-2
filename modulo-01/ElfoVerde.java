@@ -23,6 +23,4 @@ public class ElfoVerde extends Elfo{
             super.inventario.adicionarItem(item);
         }
     }
-    
-    
 }

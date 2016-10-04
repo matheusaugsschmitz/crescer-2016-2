@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 public class Dwarf extends Personagem{
     //ATRIBUTOS
-    protected int vida = 110;
     protected DataTerceiraEra dataNascimento;
     
     //CONSTRUTOR
     public Dwarf(String nome, DataTerceiraEra dataNascimento){
         super(nome);
+        vida = 110;
         this.dataNascimento = dataNascimento;
     }  
     
@@ -55,9 +55,6 @@ public class Dwarf extends Personagem{
     }
     
     //GETTERS AND SETTERS
-    public int getVida(){
-        return vida;
-    }
     
     public DataTerceiraEra getDataNascimento(){
         return dataNascimento;

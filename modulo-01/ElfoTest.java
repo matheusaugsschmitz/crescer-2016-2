@@ -85,7 +85,7 @@ public class ElfoTest{
         //Act
         elfo.atirarFlechaEmDwarf(anao);
         //Assert
-        assertEquals(100, anao.getVida());
+        assertEquals(100, anao.getVida(), 0);
         assertEquals(41, elfo.getFlecha().getQuantidade());
     }
     
@@ -156,5 +156,11 @@ public class ElfoTest{
     public void elfoNasceVivo(){
         Elfo n = new Elfo("Cobaia");
         assertEquals(Status.VIVO, n.getStatus());
+    }
+    
+    @Test
+    public void elfoNasceCom100DeVida(){
+        Elfo e = new Elfo("j");
+        assertEquals(100, e.getVida(), 0);
     }
 }

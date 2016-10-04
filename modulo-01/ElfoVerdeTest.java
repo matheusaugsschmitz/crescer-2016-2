@@ -85,7 +85,7 @@ public class ElfoVerdeTest{
         //Act
         elfo.atirarFlechaEmDwarf(anao);
         //Assert
-        assertEquals(100, anao.getVida());
+        assertEquals(100, anao.getVida(), 0);
         assertEquals(41, elfo.getFlecha().getQuantidade());
     }
     
@@ -182,5 +182,11 @@ public class ElfoVerdeTest{
         e.adicionarItem(new Item("Cano", 1));
         e.perderItem(new Item("Arco e Flecha de Vidro", 1));
         assertEquals(3, e.getInventario().getItens().size());
+    }
+    
+    @Test
+    public void elfoVerdeNasceCom100DeVida(){
+        Elfo e = new Elfo("j");
+        assertEquals(100, e.getVida(), 0);
     }
 }

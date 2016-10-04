@@ -13,6 +13,7 @@ public class Elfo extends Personagem{
         super(nome);
         inventario.adicionarItem(new Item("Arco", 1));
         inventario.adicionarItem(new Item("Flecha", quantidade >= 0 ? quantidade : 42));
+        vida = 100;
     }
     
     //METODOS    

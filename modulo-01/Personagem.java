@@ -10,6 +10,7 @@ public class Personagem{
     protected int exp;
     protected Status status;
     protected Inventario inventario;
+    protected double vida;
     
     //CONSTRUTOR
     public Personagem(String nome){
@@ -47,5 +48,9 @@ public class Personagem{
     
     public Inventario getInventario(){
         return inventario;
+    }
+    
+    public double getVida(){
+        return vida;
     }
 }

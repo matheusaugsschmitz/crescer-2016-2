@@ -20,7 +20,7 @@ public class DwarfTest{
         //Act
         Dwarf anao = new Dwarf("Smiggle", data);
         //Assert
-        assertEquals(110, anao.getVida());
+        assertEquals(110, anao.getVida(), 0);
     }
     
     @Test
@@ -31,7 +31,7 @@ public class DwarfTest{
         //Act
         anao.perderVida();
         //Assert
-        assertEquals(100, anao.getVida());
+        assertEquals(100, anao.getVida(), 0);
     }
     
     @Test
@@ -91,7 +91,7 @@ public class DwarfTest{
         for(int i = 0; i < 10; i++){
             d.perderVida();
         }
-        assertEquals(10, d.getVida());
+        assertEquals(10, d.getVida(), 0);
         assertEquals(Status.VIVO, d.getStatus());
     }
     
@@ -101,7 +101,7 @@ public class DwarfTest{
         for(int i = 0; i < 11; i++){
             d.perderVida();
         }
-        assertEquals(0, d.getVida());
+        assertEquals(0, d.getVida(), 0);
         assertEquals(Status.MORTO, d.getStatus());
     }
     
@@ -111,7 +111,7 @@ public class DwarfTest{
         for(int i = 0; i < 30; i++){
             d.perderVida();
         }
-        assertEquals(0, d.getVida());
+        assertEquals(0, d.getVida(), 0);
         assertEquals(Status.MORTO, d.getStatus());
     }
     
