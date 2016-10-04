@@ -14,6 +14,12 @@ public class Item{
         quantidade += unidades;
     }
     
+    @Override
+    public boolean equals(Object obj){
+        Item item = (Item)obj;
+        return item.descricao.equals(descricao) && item.quantidade == quantidade;
+    }    
+    
     //GETTERS AND SETTERS
     public void setQuantidade(int q){
         quantidade = q;
