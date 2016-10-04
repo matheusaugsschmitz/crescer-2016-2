@@ -17,10 +17,15 @@ public class Elfo extends Personagem{
     
     //METODOS    
     public void atirarFlechaEmDwarf(Dwarf anao){
+        atirarFlechaEmDwarf(anao, 1);
+    }
+    
+    //Com multiplicador de xp
+    public void atirarFlechaEmDwarf(Dwarf anao, int multiplicador){
         int quantidadeFlechas = getFlecha().getQuantidade();
         if(quantidadeFlechas > 0){
             getFlecha().setQuantidade(quantidadeFlechas-1);
-            exp++;
+            exp += multiplicador;
         }
         anao.perderVida();
     }
