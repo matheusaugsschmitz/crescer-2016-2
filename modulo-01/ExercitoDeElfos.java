@@ -11,22 +11,19 @@ public class ExercitoDeElfos{
    
    //MÉTODOS
    public void alistarElfo(Elfo elfo){
-       ElfoNoturno en = new ElfoNoturno("j");
-       ElfoVerde ev = new ElfoVerde("j");
-       if(elfo.getClass() == en.getClass() || elfo.getClass() == ev.getClass()){
+       boolean podeAlistar = elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno;
+       if(podeAlistar){
            elfosAlistados.add(elfo);
        }
    }
    
    public Elfo buscarPorNome(String nome){
-       Elfo elfoEncontrado = null;
        for(Elfo elfo : elfosAlistados){
            if(nome.equals(elfo.getNome())){
-               elfoEncontrado = elfo;
-               break;
+               return elfo;
            }
        }
-       return elfoEncontrado;
+       return null;
    }
    
    public ArrayList<Elfo> buscar(Status status){
@@ -40,7 +37,7 @@ public class ExercitoDeElfos{
    }
    
    //GETTERS AND SETTERS
-   public ArrayList<Elfo> getElfosAlistados(){
-       return elfosAlistados;
+   public Elfo[] getElfosAlistados(){
+       return elfosAlistados.toArray(new Elfo[elfosAlistados.size()]);
    }
 }
