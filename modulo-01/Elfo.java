@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Elfo extends Personagem{
     //ATRIBUTOS
-    
+    private static int contadorDeElfos;
     
     //CONSTRUTOR
     public Elfo(String n){
@@ -14,6 +14,12 @@ public class Elfo extends Personagem{
         inventario.adicionarItem(new Item("Arco", 1));
         inventario.adicionarItem(new Item("Flecha", quantidade >= 0 ? quantidade : 42));
         vida = 100;
+        contadorDeElfos++;
+    }
+    
+    protected void finalize()throws Throwable{
+        super.finalize();
+        Elfo.contadorDeElfos--;
     }
     
     //METODOS   
@@ -55,5 +61,9 @@ public class Elfo extends Personagem{
     
     public Item getFlecha(){
         return inventario.getItens().get(1);
+    }
+    
+    public static int getContadorDeElfos(){
+        return contadorDeElfos;
     }
 }

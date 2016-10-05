@@ -10,6 +10,10 @@ import org.junit.Test;
  * @version (a version number or a date)
  */
 public class ElfoVerdeTest{
+    @After
+    public void tearDown(){
+        System.gc();//garbageCollector
+    }
     
     @Test
     public void elfoNasceComNome(){
@@ -188,5 +192,18 @@ public class ElfoVerdeTest{
     public void elfoVerdeNasceCom100DeVida(){
         Elfo e = new Elfo("j");
         assertEquals(100, e.getVida(), 0);
+    }
+    
+    @Test
+    public void nasceEIncrementaOContadorDeElfos(){
+        ElfoVerde ev = new ElfoVerde("k");
+        assertEquals(1, Elfo.getContadorDeElfos());
+    }
+    
+    @Test
+    public void nasemDoisElfosVerdesEIncrementamOContadorDeElfos(){
+        ElfoVerde ev = new ElfoVerde("k");
+        ElfoVerde en = new ElfoVerde("k");
+        assertEquals(2, Elfo.getContadorDeElfos());        
     }
 }
