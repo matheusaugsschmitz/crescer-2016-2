@@ -5,13 +5,15 @@ import java.util.*;
  * @author (seu nome aqui)
  * @version (versão ou data)
  */
-public abstract class ExercitoDeElfos{
+public class ExercitoDeElfos{
    //ATRIBUTOS
    private ArrayList<Elfo> elfosAlistados = new ArrayList<Elfo>();
    
    //MÉTODOS
-   public void adicionarElfo(Elfo elfo){
-       if(elfo.getClass().equals("ElfoVerde") || elfo.getClass().equals("ElfoNoturno")){
+   public void alistarElfo(Elfo elfo){
+       ElfoNoturno en = new ElfoNoturno("j");
+       ElfoVerde ev = new ElfoVerde("j");
+       if(elfo.getClass() == en.getClass() || elfo.getClass() == ev.getClass()){
            elfosAlistados.add(elfo);
        }
    }
@@ -21,6 +23,7 @@ public abstract class ExercitoDeElfos{
        for(Elfo elfo : elfosAlistados){
            if(nome.equals(elfo.getNome())){
                elfoEncontrado = elfo;
+               break;
            }
        }
        return elfoEncontrado;
@@ -34,5 +37,10 @@ public abstract class ExercitoDeElfos{
            }
        }
        return elfos;
+   }
+   
+   //GETTERS AND SETTERS
+   public ArrayList<Elfo> getElfosAlistados(){
+       return elfosAlistados;
    }
 }
