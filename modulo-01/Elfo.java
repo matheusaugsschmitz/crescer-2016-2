@@ -16,7 +16,12 @@ public class Elfo extends Personagem{
         vida = 100;
     }
     
-    //METODOS    
+    //METODOS   
+    protected void inicializarInventario(int quantidadeFlechas) {
+        this.inventario.adicionarItem(new Item("Arco", 1));
+        this.inventario.adicionarItem(new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
+    }
+     
     public void atirarFlechaEmDwarf(Dwarf anao){
         atirarFlechaEmDwarf(anao, 1);
     }

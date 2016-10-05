@@ -52,5 +52,7 @@ public abstract class Personagem{
     
     public double getVida(){
         return vida;
-    }
+    }    
+    
+    abstract void inicializarInventario(int quantidadeFlechas);
 }

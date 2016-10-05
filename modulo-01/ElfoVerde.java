@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Escreva a descrição da classe ElfosVerdes aqui.
  * 
@@ -18,9 +18,20 @@ public class ElfoVerde extends Elfo{
         super.atirarFlechaEmDwarf(anao, 2);
     }
     
+    @Override
+    protected void inicializarInventario(int quantidadeFlechas) {
+        this.adicionarItem(new Item("Arco de Vidro", 1));
+        this.adicionarItem(new Item("Flecha de Vidro", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
+    }
+    
     public void adicionarItem(Item item){
-        //TO-DO: Verificar sistema do Bernardo para checagem dos nomes por array de strings
-        if(item != null && item.getDescricao().equals("Espada de aço valiriano") || item.getDescricao().equals("Arco e Flecha de Vidro")){
+        String[] validas = { 
+            "Espada de aço valiriano", 
+            "Arco de Vidro",
+            "Flecha de Vidro"
+        };
+        boolean podeAdicionar = item != null && new ArrayList<>(Arrays.asList(validas)).contains(item.getDescricao());
+        if(podeAdicionar){
             super.inventario.adicionarItem(item);
         }
     }

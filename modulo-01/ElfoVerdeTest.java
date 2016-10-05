@@ -169,7 +169,7 @@ public class ElfoVerdeTest{
     public void adicionar3ItensSendo2Validos(){
         ElfoVerde e = new ElfoVerde("West");
         e.adicionarItem(new Item("Espada de aço valiriano", 1));
-        e.adicionarItem(new Item("Arco e Flecha de Vidro", 1));
+        e.adicionarItem(new Item("Arco de Vidro", 1));
         e.adicionarItem(new Item("Cano", 1));
         assertEquals(4, e.getInventario().getItens().size());
     }
