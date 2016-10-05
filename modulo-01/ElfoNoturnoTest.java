@@ -193,7 +193,7 @@ public class ElfoNoturnoTest{
         for(int i = 0; i < 90; i++){
             e.atirarFlechaEmDwarf(anao);
         }
-        assertEquals(0, e.getVida(), 0);
+        assertEquals(0, (int)e.getVida());
         assertEquals(Status.MORTO, e.getStatus());
     }
 }

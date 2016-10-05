@@ -69,38 +69,6 @@ public class Inventario{
         } while (posicoesSendoTrocadas);
     }
     
-    /*TO-DO: analizar lógica e diferenças para o novo método
-    public void ordenarItens(TipoOrdenacao ordenacao){
-        if(ordenacao == TipoOrdenacao.ASCENDENTE){
-            ordenarItens();
-        }else{
-            ArrayList<Item> novaOrdem = new ArrayList<>(itens.size());
-            ArrayList<Integer> indicesAsc = new ArrayList<>(itens.size());
-            for(int i = 0; i < itens.size(); i++){
-                int indice = 0;
-                int indiceAnterior = 0;
-                if(i - 1 >= 0){ indiceAnterior = i - 1; }else{ indiceAnterior = 0; }
-                for(int i1 = 0; i1 < itens.size(); i1++){
-                    if(itens.get(i1).getQuantidade() <= itens.get(indice).getQuantidade()){
-                        if(!indicesAsc.isEmpty()){
-                            if(itens.get(i1).getQuantidade() >= itens.get(indicesAsc.get(indiceAnterior)).getQuantidade() && !itens.get(i1).getDescricao().equals(itens.get(indicesAsc.get(indiceAnterior)).getDescricao())){
-                                indice = i1;
-                            }
-                        }else{
-                            indice = i1;
-                        }
-                    }
-                }
-                indicesAsc.add(indice);
-            }
-            for(int i = indicesAsc.size()-1; i >= 0; i--){
-                novaOrdem.add(itens.get(indicesAsc.get(i)));
-            }
-            itens = novaOrdem; 
-        }
-    }
-    */
-    
     public void aumentarUnidadesDosItens(int unidades){
         for (Item item : itens) {
             item.aumentarUnidades(unidades);

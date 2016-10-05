@@ -15,14 +15,10 @@ public class ElfoNoturno extends Elfo{
     }
     
     public void atirarFlechaEmDwarf(Dwarf anao){
-        boolean perderVida = getFlecha().getQuantidade() > 0 ? true : false;
-        super.atirarFlechaEmDwarf(anao, 3);
-        if(perderVida){
-            vida *= 0.95;
-        }
-        if(vida < 1.0){
-            status = Status.MORTO;
-            vida = 0;
+        if (status == Status.VIVO && getFlecha().getQuantidade() > 0) {
+            super.atirarFlechaEmDwarf(anao, 3);
+            this.vida *= 0.95;
+            this.status = (int)this.vida == 0 ? Status.MORTO : this.status;
         }
     }
     //5.2
