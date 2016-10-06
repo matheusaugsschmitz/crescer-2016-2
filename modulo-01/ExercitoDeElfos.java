@@ -1,17 +1,17 @@
 import java.util.*;
-public class ExercitoDeElfos{
+public class ExercitoDeElfos implements Exercito{
    //ATRIBUTOS
    private ArrayList<Elfo> elfosAlistados = new ArrayList<Elfo>();
    
    //MÉTODOS
-   public void alistarElfo(Elfo elfo){
+   public void alistar(Elfo elfo){
        boolean podeAlistar = elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno;
        if(podeAlistar){
            elfosAlistados.add(elfo);
        }
    }
    
-   public Elfo buscarPorNome(String nome){
+   public Elfo buscar(String nome){
        for(Elfo elfo : elfosAlistados){
            if(nome.equals(elfo.getNome())){
                return elfo;
@@ -31,7 +31,7 @@ public class ExercitoDeElfos{
    }
    
    //GETTERS AND SETTERS
-   public Elfo[] getElfosAlistados(){
+   public Elfo[] getContingente(){
        return elfosAlistados.toArray(new Elfo[elfosAlistados.size()]);
    }
 }

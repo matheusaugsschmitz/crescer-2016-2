@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ExercitoDeElfosTest{
+public class BatalhaoEspecialDeElfosTest{
     @After
     public void tearDown(){
         System.gc();//garbageCollector
@@ -12,7 +12,7 @@ public class ExercitoDeElfosTest{
     
     @Test
     public void criarExercitoComElfoVerde(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
+        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         Elfo elfoVerde = new ElfoVerde("EV");
         e.alistar(elfoVerde);
         assertEquals(elfoVerde, e.getContingente()[0]);
@@ -20,7 +20,7 @@ public class ExercitoDeElfosTest{
     
     @Test
     public void criarExercitoComElfoNoturno(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
+        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         Elfo elfoNoturno = new ElfoNoturno("EN");
         e.alistar(elfoNoturno);
         assertEquals(elfoNoturno, e.getContingente()[0]);
@@ -28,7 +28,7 @@ public class ExercitoDeElfosTest{
     
     @Test
     public void criarExercitoComElfo(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
+        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         Elfo elfo = new Elfo("EN");
         e.alistar(elfo);
         assertEquals(0, e.getContingente().length);
@@ -36,30 +36,30 @@ public class ExercitoDeElfosTest{
     
     @Test
     public void criarExercitoCom1ElfoVerdeE1ElfoNoturno(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
-        e.alistar(new ElfoVerde("Josias"));
-        e.alistar(new ElfoNoturno("Jonas"));
-        assertEquals(2, e.getContingente().length);
+        BatalhaoEspecialDeElfos e1 = new BatalhaoEspecialDeElfos();
+        e1.alistar(new ElfoVerde("Josias"));
+        e1.alistar(new ElfoNoturno("Jonas"));
+        assertEquals(2, e1.getContingente().length);
     }
     
     @Test
     public void criarExercitoCom3ElfosNormais(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
-        e.alistar(new Elfo("Josias"));
-        e.alistar(new Elfo("Jonas"));
-        e.alistar(new Elfo("Jonas"));
-        assertEquals(0, e.getContingente().length);
+        BatalhaoEspecialDeElfos e2 = new BatalhaoEspecialDeElfos();
+        e2.alistar(new Elfo("Josias"));
+        e2.alistar(new Elfo("Jonas"));
+        e2.alistar(new Elfo("Jonas"));
+        assertEquals(0, e2.getContingente().length);
     }
     
     @Test
     public void criarExercitoSemElfos(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
+        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         assertEquals(0, e.getContingente().length);
     }
     
     @Test
     public void buscarElfoPorNomeCom2ElfosDiferentes(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
+        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         Elfo ev = new ElfoVerde("Josias");
         e.alistar(ev);
         e.alistar(new ElfoNoturno("Jonas"));
@@ -68,7 +68,7 @@ public class ExercitoDeElfosTest{
     
     @Test
     public void buscarElfoPorNomeCom2ElfosIguais(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
+        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         Elfo ev = new ElfoVerde("Josias");
         Elfo en = new ElfoNoturno("Josias");
         e.alistar(ev);
@@ -78,15 +78,15 @@ public class ExercitoDeElfosTest{
     
     @Test
     public void buscarElfoPorNomeSemElfos(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
+        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         assertEquals(null, e.buscar("Josias"));
     }
     
     @Test
     public void buscarElfosPorStatusComDoisElfosVivos(){
-        ExercitoDeElfos e = new ExercitoDeElfos();
+        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         Elfo ev = new ElfoVerde("Josias");
-        Elfo en = new ElfoNoturno("Josias");
+        Elfo en = new ElfoNoturno("Jonas");
         e.alistar(ev);
         e.alistar(en);
         ArrayList<Elfo> resultado = e.buscar(Status.VIVO);
