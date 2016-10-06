@@ -1,10 +1,5 @@
 import java.util.*;
-/**
- * Escreva a descrição da classe ElfosVerdes aqui.
- * 
- * @author (seu nome) 
- * @version (número de versão ou data)
- */
+
 public class ElfoVerde extends Elfo{
     public ElfoVerde(String n){
         super(n);

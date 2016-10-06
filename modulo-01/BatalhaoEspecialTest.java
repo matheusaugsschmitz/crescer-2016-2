@@ -1,16 +1,9 @@
-
 import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * A classe de teste BatalhaoEspecialTest.
- *
- * @author  (seu nome)
- * @version (um número de versão ou data)
- */
 public class BatalhaoEspecialTest{
     @After
     public void tearDown(){

@@ -1,10 +1,5 @@
 import java.util.ArrayList;
-/**
- * Write a description of class Inventario here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Inventario{
     //ATRIBUTOS
     private ArrayList<Item> itens = new ArrayList<>();

@@ -1,10 +1,5 @@
 import java.util.ArrayList;
-/**
- * Write a description of class IrishDwarf here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class IrishDwarf extends Dwarf{
     public IrishDwarf(String nome, DataTerceiraEra dataNascimento){
         super(nome, dataNascimento);

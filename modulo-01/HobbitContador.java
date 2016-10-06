@@ -1,10 +1,5 @@
 import java.util.ArrayList;
-/**
- * Write a description of class HobbitContador here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class HobbitContador{
     private ArrayList<ArrayList<Integer>> pares;
     public int calcularDiferenca(ArrayList<ArrayList<Integer>> pares){

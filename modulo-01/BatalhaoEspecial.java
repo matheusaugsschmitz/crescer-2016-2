@@ -1,10 +1,4 @@
 import java.util.HashMap;
-/**
- * Escreva a descrição da classe BatalhaoEspecial aqui.
- * 
- * @author (seu nome) 
- * @version (número de versão ou data)
- */
 public class BatalhaoEspecial{
     //ATRIBUTOS
    private HashMap<String, Elfo> elfosAlistados = new HashMap<>();

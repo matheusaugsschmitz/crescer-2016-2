@@ -4,15 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
 
-
-/**
- * The test class InventarioTest.
- *
- * @author  (your name)
- * @version (a version number or a date)
- */
-public class InventarioTest
-{
+public class InventarioTest{
     @Test
     public void adicionaItem(){
         Inventario inv = new Inventario();

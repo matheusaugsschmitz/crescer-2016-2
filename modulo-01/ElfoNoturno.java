@@ -1,10 +1,3 @@
-
-/**
- * Escreva a descrição da classe ElfoNoturno aqui.
- * 
- * @author (seu nome) 
- * @version (número de versão ou data)
- */
 public class ElfoNoturno extends Elfo{
     public ElfoNoturno(String nome){
         super(nome);

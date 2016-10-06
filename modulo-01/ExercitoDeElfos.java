@@ -1,10 +1,4 @@
 import java.util.*;
-/**
- * Classe abstrata ExercitoDeElfos - escreva a descrição da classe aqui
- * 
- * @author (seu nome aqui)
- * @version (versão ou data)
- */
 public class ExercitoDeElfos{
    //ATRIBUTOS
    private ArrayList<Elfo> elfosAlistados = new ArrayList<Elfo>();

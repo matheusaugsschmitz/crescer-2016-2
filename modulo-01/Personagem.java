@@ -1,10 +1,3 @@
-
-/**
- * Write a description of class Personagem here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public abstract class Personagem{
     protected String nome;
     protected int exp;
