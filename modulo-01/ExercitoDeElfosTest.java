@@ -92,4 +92,22 @@ public class ExercitoDeElfosTest{
         ArrayList<Elfo> resultado = e.buscar(Status.VIVO);
         assertEquals(2, resultado.size());
     }
+    
+    @Test
+    public void ordenacaoDeAtaqueDeElfos(){
+        Elfo e1 = new ElfoNoturno("J");
+        Elfo e2 = new ElfoNoturno("M", 90);
+        Elfo e3 = new ElfoVerde("V");
+        for(int i = 0; i < 90; i++){
+            e2.atirarFlechaEmDwarf(new Dwarf());
+        }
+        ExercitoDeElfos ede = new ExercitoDeElfos();
+        ede.alistar(e1);
+        ede.alistar(e2);
+        ede.alistar(e3);
+        List<Elfo> ordem = ede.getOrdemDeAtaque();
+        assertEquals(e3, ordem.get(0));
+        assertEquals(e1, ordem.get(1));
+        assertEquals(2, ordem.size());
+    }
 }

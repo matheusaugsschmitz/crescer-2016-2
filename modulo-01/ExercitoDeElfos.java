@@ -1,5 +1,5 @@
 import java.util.*;
-public class ExercitoDeElfos implements Exercito{
+public class ExercitoDeElfos implements Exercito, Estrategias{
    //ATRIBUTOS
    private ArrayList<Elfo> elfosAlistados = new ArrayList<Elfo>();
    
@@ -28,6 +28,23 @@ public class ExercitoDeElfos implements Exercito{
            }
        }
        return elfos;
+   }
+   
+   public List<Elfo> getOrdemDeAtaque(){
+       List<Elfo> elfosEmOrdemDeAtaque = new ArrayList<Elfo>();
+       for(int i = 0; i < 2; i++){
+           for(Elfo elfo : elfosAlistados){
+               boolean[] verificacaoClasses = {elfo instanceof ElfoVerde, elfo instanceof ElfoNoturno};
+               if(elfo.getStatus() == Status.VIVO && verificacaoClasses[i]){
+                   elfosEmOrdemDeAtaque.add(elfo);  
+               }
+           }
+       }
+       return elfosEmOrdemDeAtaque;
+   }
+   
+   public List<Elfo> getSegundaOrdemDeAtaque(){
+       return null;
    }
    
    //GETTERS AND SETTERS
