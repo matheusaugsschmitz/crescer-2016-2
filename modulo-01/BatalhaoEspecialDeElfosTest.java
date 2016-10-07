@@ -35,14 +35,6 @@ public class BatalhaoEspecialDeElfosTest{
     }
     
     @Test
-    public void criarExercitoCom1ElfoVerdeE1ElfoNoturno(){
-        BatalhaoEspecialDeElfos e1 = new BatalhaoEspecialDeElfos();
-        e1.alistar(new ElfoVerde("Josias"));
-        e1.alistar(new ElfoNoturno("Jonas"));
-        assertEquals(2, e1.getContingente().length);
-    }
-    
-    @Test
     public void criarExercitoCom3ElfosNormais(){
         BatalhaoEspecialDeElfos e2 = new BatalhaoEspecialDeElfos();
         e2.alistar(new Elfo("Josias"));
@@ -80,16 +72,5 @@ public class BatalhaoEspecialDeElfosTest{
     public void buscarElfoPorNomeSemElfos(){
         BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
         assertEquals(null, e.buscar("Josias"));
-    }
-    
-    @Test
-    public void buscarElfosPorStatusComDoisElfosVivos(){
-        BatalhaoEspecialDeElfos e = new BatalhaoEspecialDeElfos();
-        Elfo ev = new ElfoVerde("Josias");
-        Elfo en = new ElfoNoturno("Jonas");
-        e.alistar(ev);
-        e.alistar(en);
-        ArrayList<Elfo> resultado = e.buscar(Status.VIVO);
-        assertEquals(2, resultado.size());
     }
 }
