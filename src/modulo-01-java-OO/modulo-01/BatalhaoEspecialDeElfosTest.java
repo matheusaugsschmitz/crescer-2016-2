@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.util.*;
 
 public class BatalhaoEspecialDeElfosTest {
-    
     @Test
     public void alistarElfoNoBatalhaoEspecial() {
         BatalhaoEspecialDeElfos batalhao = new BatalhaoEspecialDeElfos();
@@ -113,7 +112,7 @@ public class BatalhaoEspecialDeElfosTest {
         batalhao.agruparPorStatus();        
         List<Elfo> resultado = batalhao.buscar(Status.VIVO);
         batalhao.alistar(recruta2);
-        for (int i = 0; i < 91; i++) recruta1.atirarFlechaEmDwarf(new Dwarf());
+        for (int i = 0; i < 91; i++) recruta1.atirarFlecha(new Dwarf());
         List<Elfo> buscaAposMorte = batalhao.buscar(Status.VIVO);
         assertEquals(1, buscaAposMorte.size());
         assertEquals(recruta2, buscaAposMorte.get(0));
@@ -133,7 +132,8 @@ public class BatalhaoEspecialDeElfosTest {
     private ElfoNoturno criarElfoNoturnoEMatalo() {
         ElfoNoturno suicida = new ElfoNoturno("Elfo kamikaze", 90);
         for (int i = 0; i < 90; i++)
-            suicida.atirarFlechaEmDwarf(new Dwarf());
+            suicida.atirarFlecha(new Dwarf());
         return suicida;
     }
 }
+

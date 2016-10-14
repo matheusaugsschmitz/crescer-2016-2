@@ -1,5 +1,5 @@
 import java.util.*;
-public class BatalhaoEspecialDeElfos implements Exercito, Estrategias{
+public class BatalhaoEspecialDeElfos implements Exercito{
     //ATRIBUTOS
    private HashMap<String, ArrayList<Elfo>> contingente = new HashMap<>();
    private HashMap<Status, ArrayList<Elfo>> grupoPorStatus = new HashMap<>();
@@ -41,24 +41,6 @@ public class BatalhaoEspecialDeElfos implements Exercito, Estrategias{
    public ArrayList<Elfo> buscar(Status status) {
         agruparPorStatus();
         return grupoPorStatus.get(status);
-   }
-   
-   public List<Elfo> getOrdemDeAtaque(){
-       List<Elfo> elfosEmOrdemDeAtaque = new ArrayList<Elfo>();
-       agruparPorStatus();
-       for(int i = 0; i < 2; i++){
-           for(Elfo elfo : buscar(Status.VIVO)){
-               boolean[] verificacaoClasses = {elfo instanceof ElfoVerde, elfo instanceof ElfoNoturno};
-               if(verificacaoClasses[i]){
-                   elfosEmOrdemDeAtaque.add(elfo);  
-               }
-           }
-       }
-       return elfosEmOrdemDeAtaque;
-   }
-   
-   public List<Elfo> getSegundaOrdemDeAtaque(){
-       return null;
    }
    
    //GETTERS AND SETTERS
