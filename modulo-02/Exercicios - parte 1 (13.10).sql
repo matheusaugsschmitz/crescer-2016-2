@@ -59,5 +59,5 @@ select top 1 with ties
 	   d.NomeDepartamento
 from Empregado e
 left join Departamento d on e.IDDepartamento = d.IDDepartamento
-group by Salario, d.NomeDepartamento
-order by Salario desc;
+group by e.Salario, d.NomeDepartamento
+order by e.Salario desc;
