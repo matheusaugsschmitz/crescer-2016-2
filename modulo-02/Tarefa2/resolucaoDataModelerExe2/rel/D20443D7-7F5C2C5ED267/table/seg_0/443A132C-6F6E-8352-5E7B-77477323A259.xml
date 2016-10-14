@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="443A132C-6F6E-8352-5E7B-77477323A259" name="Projeto">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:06:09 UTC</createdTime>
+<generatorID>CC3BF19F-C8BE-51E7-140E-3E9FCA6C9410</generatorID>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_projeto" id="AE104026-8A95-2153-D5C9-F72AC8F3C6E7">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:06:32 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="id_responsavel" id="CFEEA82A-E558-9A9F-DC34-A63D118862AC">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:19:17 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2066FE07-8168-6214-3046-8B25E643F417" referredColumn="9880535A-8F94-93C0-E93D-521078A771CB"/>
+</associations>
+</Column>
+<Column name="descricao" id="28CAD139-5812-E469-6B26-289BF25A87DD">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:19:17 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_inico" id="8BC429CD-9351-4184-6FEA-2156058C1C18">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:19:17 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_fim_previsto" id="16F9CE07-0D91-03E1-33C2-21A023C7FE3C">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:19:17 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_fim_real" id="9B7C77B4-E2EC-D167-49CA-7BCCC64123B3">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:19:17 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_previsto" id="BA6E5821-870E-BCF8-B8F6-BBCF2F017CEE">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:19:17 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_realizado" id="5E76A0D6-D4DB-BC3B-025B-84058585FCEE">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:23:38 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_faturado" id="83850667-5D44-A7CB-2632-5F84EB0A9EA5">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:23:38 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="situacao" id="758721E2-6E90-67B5-8E23-B268ECC217DF">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:24:56 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EE54D773-D1B7-3429-0AE9-88A61C77DD39" name="PK_Projeto">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:06:32 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="AE104026-8A95-2153-D5C9-F72AC8F3C6E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DB23EBF4-CBFC-0AF4-28FE-66839AE854BE" name="FK_Projeto_Empregado">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-13 17:26:20 UTC</createdTime>
+<ownerDesignName>resolucaoDataModelerExe2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFEEA82A-E558-9A9F-DC34-A63D118862AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
