@@ -50,7 +50,7 @@ into CopiaEmpregado
 from Empregado e
 inner join Departamento d on e.IDDepartamento = d.IDDepartamento;
 /*9)Liste a diferença que representará o reajuste aplicado no item anterior no somatóriodos salários de todosos empregados.*/
-select e.NomeEmpregado, (c.Salario - e.Salario) DiferecaSalario 
+select (sum(c.Salario) - sum(e.Salario)) DiferecaSomaSalario 
 from Empregado e
 inner join CopiaEmpregado c on e.IDEmpregado = c.IDEmpregado;
 /*10)Liste o departamento com o empregado de maior salário*/
