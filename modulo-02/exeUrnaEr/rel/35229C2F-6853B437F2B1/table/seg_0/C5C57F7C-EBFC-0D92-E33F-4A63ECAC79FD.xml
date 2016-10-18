@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C5C57F7C-EBFC-0D92-E33F-4A63ECAC79FD" name="Voto">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:00:57 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_voto" id="9E7778AD-1B0A-6817-87E4-4E7B24F10359">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:11:06 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_candidato" id="A55AF43F-3A8E-8527-EA93-D50BEA2AD3B8">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:11:06 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="85BDE941-DA2D-B0EE-7DEA-2A42F52C02F2" referredColumn="47C61D2E-E4B1-E7C5-746D-954CBF656936"/>
+</associations>
+</Column>
+<Column name="data_voto" id="7F006E3B-4B78-0D49-1296-8D6C2F879953">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:11:06 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zona" id="171F81F2-1EFE-6795-D507-A0784281F720">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:14:14 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="secao" id="4CF2D91F-EE05-BB80-4DFA-69BA3F2D6B95">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:14:14 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="imprimir" id="61DF40DA-365A-705E-2232-9200FB1422A0">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:14:36 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F67BF29F-BE18-4368-8C64-5C6A3A6C0DD1" name="PK_Voto">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:11:06 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E7778AD-1B0A-6817-87E4-4E7B24F10359"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8722F8F8-7B71-A014-2E72-F89BEEEB1A83" name="Voto_Candidatos_FK">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:11:46 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A55AF43F-3A8E-8527-EA93-D50BEA2AD3B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6A388E93-BBF0-B1E5-D691-7BCEA1744652" containerWithKeyObject="8ADF7DB8-A5E6-8947-7EE6-E0430255EB05" localFKIndex="50A696A9-4BEE-B096-D765-37D5583612C4" name="FK_Candidatos_Cidade">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:08:18 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0347F71E-40EA-0955-F104-40430AD9679A</referredTableID>
+<keyObject>B0B77874-B67D-5BB4-E804-ECAEA9A486CA</keyObject>
+<referredKeyID>B0B77874-B67D-5BB4-E804-ECAEA9A486CA</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

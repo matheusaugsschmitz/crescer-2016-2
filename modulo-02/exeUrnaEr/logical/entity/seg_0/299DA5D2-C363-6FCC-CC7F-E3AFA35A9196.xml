@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="299DA5D2-C363-6FCC-CC7F-E3AFA35A9196" name="Eleitores">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:47:05 UTC</createdTime>
+<ownerDesignName>exeUrnaEr</ownerDesignName>
+<engineerTo>
+<item key="35229C2F-4B84-4C11-9528-6853B437F2B1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+</Entity>

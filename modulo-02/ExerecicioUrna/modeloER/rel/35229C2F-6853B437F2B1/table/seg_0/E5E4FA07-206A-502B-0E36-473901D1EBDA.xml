@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E5E4FA07-206A-502B-0E36-473901D1EBDA" name="TipoCargo">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:18:21 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tipo_cargo" id="F4CB9F72-DF0E-A17E-79F6-420E7B7F7763">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:19:12 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cargo" id="BF179D55-D561-B01F-2C4E-5DBB9EC749A0">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:19:12 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="97CC93DF-794B-E548-C867-4FCFBB2F7ED4" name="PK_TipoCargo">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:19:12 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4CB9F72-DF0E-A17E-79F6-420E7B7F7763"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

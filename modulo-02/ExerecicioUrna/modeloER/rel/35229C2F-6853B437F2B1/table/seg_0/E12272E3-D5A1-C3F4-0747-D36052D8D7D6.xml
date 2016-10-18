@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E12272E3-D5A1-C3F4-0747-D36052D8D7D6" name="Partido">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:21:01 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_partido" id="80F11730-8456-28AF-8D32-B87600B01FC8">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:22:33 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="0EB9C310-A80D-74DA-8394-1C6E455B8CE3">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:22:33 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sigla" id="C01EC5B2-4C29-2C7E-DB8D-F99643864039">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:22:33 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0FA615E3-BEB4-E926-B50E-154A47E64208" name="PK_Partido">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:22:33 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80F11730-8456-28AF-8D32-B87600B01FC8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

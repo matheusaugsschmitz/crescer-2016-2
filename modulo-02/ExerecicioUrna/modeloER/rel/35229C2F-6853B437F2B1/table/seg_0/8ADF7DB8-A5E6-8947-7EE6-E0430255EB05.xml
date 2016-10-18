@@ -1,0 +1,179 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8ADF7DB8-A5E6-8947-7EE6-E0430255EB05" name="Candidato">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:47:29 UTC</createdTime>
+<generatorID>E79670E3-E098-9C87-D1E1-FBA97D1D7614</generatorID>
+<ownerDesignName>modeloER</ownerDesignName>
+<ordsAlias>candidatos</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_candidato" id="47C61D2E-E4B1-E7C5-746D-954CBF656936">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:48:27 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_cidade" id="7569F6A8-4DB8-5E47-CCEE-CCDA4FD2C7A9">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A388E93-BBF0-B1E5-D691-7BCEA1744652" referredColumn="AC28BCB1-56A0-E9E1-541F-55757631F875"/>
+</associations>
+</Column>
+<Column name="id_tipo_cargo" id="A30F0DC7-6495-75A3-4AF8-742ABC34E764">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9147208D-6787-6E8D-9064-5008FDCD1126" referredColumn="F4CB9F72-DF0E-A17E-79F6-420E7B7F7763"/>
+</associations>
+</Column>
+<Column name="id_partido" id="3D96DF67-1863-A79C-7B87-D4827D69BF10">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="647E5266-B36C-47FE-748C-31E6BCAA1010" referredColumn="80F11730-8456-28AF-8D32-B87600B01FC8"/>
+</associations>
+</Column>
+<Column name="numero" id="5BE83FD9-393F-1202-3A44-40C088129DE2">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_completo" id="9DCF7809-E44A-F6C5-4A99-330637982363">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_popular" id="A9FFC603-BD5B-ED81-1F48-35B2A4F98708">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_nascimento" id="55C4FC1A-E9EF-F187-C54A-6136F3EEF0CC">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="registro_tre" id="FA4F9BCB-B5FC-346A-A826-E5DF11B9812D">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="foto" id="D8C41882-B5E8-8B27-C778-73339D5A780D">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:52:55 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F9B5C4B5-9B8B-5607-B001-7711B5C7D99D" name="PK_Candidatos">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:48:27 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47C61D2E-E4B1-E7C5-746D-954CBF656936"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ABE7DA32-2B55-3CBC-6CFA-98B97BD293A5" name="UK_Candidatos">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:09:46 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BE83FD9-393F-1202-3A44-40C088129DE2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50A696A9-4BEE-B096-D765-37D5583612C4" name="FK_Candidatos_Cidade">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:08:18 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7569F6A8-4DB8-5E47-CCEE-CCDA4FD2C7A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="491F6271-FD88-4703-03A4-CDAC98547847" name="FK_Candidato_TipoCargo">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:19:50 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A30F0DC7-6495-75A3-4AF8-742ABC34E764"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B8B7B872-C1CC-F02B-FD3D-13B96E85D778" name="FK_Candidato_Partido">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:23:10 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D96DF67-1863-A79C-7B87-D4827D69BF10"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

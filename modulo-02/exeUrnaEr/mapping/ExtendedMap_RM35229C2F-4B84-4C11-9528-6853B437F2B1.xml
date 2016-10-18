@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<RMExtendedMap class="oracle.dbtools.crest.model.xtdmapping.RMExtendedMap">
+<mappings itemClass="oracle.dbtools.crest.model.xtdmapping.ContainerMapping">
+<CM id="299DA5D2-E3AFA35A91967519BFB0-FF7501E2DB88" lID="299DA5D2-C363-6FCC-CC7F-E3AFA35A9196" lT="0" rID="7519BFB0-0FAD-9028-1955-FF7501E2DB88" rT="4">
+</CM>
+<CM id="E79670E3-FBA97D1D76148ADF7DB8-E0430255EB05" lID="E79670E3-E098-9C87-D1E1-FBA97D1D7614" lT="0" rID="8ADF7DB8-A5E6-8947-7EE6-E0430255EB05" rT="4">
+</CM>
+</mappings>
+</RMExtendedMap>

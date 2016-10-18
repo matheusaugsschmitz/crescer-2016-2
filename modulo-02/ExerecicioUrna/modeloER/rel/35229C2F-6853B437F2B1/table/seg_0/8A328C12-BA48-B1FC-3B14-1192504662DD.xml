@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8A328C12-BA48-B1FC-3B14-1192504662DD" name="Estado">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:02:22 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_estado" id="5A0281C2-CADB-A449-1EFC-1EF4E7A12625">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:04:21 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="9C4F2C73-B723-6864-4893-142E4B2D9CDA">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:04:21 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sigla" id="B39661D9-17D3-3A02-5DB5-118A4D8E5407">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:04:21 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4CAAFB67-1D00-5974-FF3D-19629761034A" name="PK_Estado">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:04:21 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A0281C2-CADB-A449-1EFC-1EF4E7A12625"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7519BFB0-0FAD-9028-1955-FF7501E2DB88" name="Eleitor">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:47:29 UTC</createdTime>
+<generatorID>299DA5D2-C363-6FCC-CC7F-E3AFA35A9196</generatorID>
+<ownerDesignName>modeloER</ownerDesignName>
+<ordsAlias>eleitores</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_eleitor" id="DC76243F-DA1F-DEFF-3469-44984A0A3ED4">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:54:08 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_completo" id="E442C947-D4FB-B8AC-1D17-6B9771A76D2B">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:55:48 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="titulo_eleitoral" id="5F075483-98C8-481E-1C29-740A9A8F4748">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:55:48 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rg" id="48FD622A-F320-4A3D-B43F-A842EE230E91">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:55:48 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_nascimento" id="5DC3B957-E905-1317-D336-CD219FD860E0">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:55:48 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zona" id="3630F1EF-9710-65BD-F8D1-D79565E04DEB">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:55:48 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="secao" id="E63563BF-129A-08B2-3973-53D97004D732">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:55:48 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="voto" id="AA4E2CC1-42CB-E619-799C-F6384C829052">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:01:28 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A303F46B-6621-8AD5-E0A9-E46ACC6563E3" name="PK_Eleitores">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 18:54:08 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC76243F-DA1F-DEFF-3469-44984A0A3ED4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

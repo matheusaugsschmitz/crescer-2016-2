@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="E79670E3-E098-9C87-D1E1-FBA97D1D7614" name="Candidatos" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="87EEA046-21BB-5547-D72D-06C1E9F6E99A" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="299DA5D2-C363-6FCC-CC7F-E3AFA35A9196" name="Eleitores" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="87EEA046-21BB-5547-D72D-06C1E9F6E99A" propertySourceId="" propertyTargetId=""/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>
