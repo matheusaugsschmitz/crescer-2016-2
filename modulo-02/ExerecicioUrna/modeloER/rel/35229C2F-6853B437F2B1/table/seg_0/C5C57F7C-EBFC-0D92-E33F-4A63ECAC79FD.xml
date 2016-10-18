@@ -31,6 +31,16 @@
 <colAssociation fkAssociation="85BDE941-DA2D-B0EE-7DEA-2A42F52C02F2" referredColumn="47C61D2E-E4B1-E7C5-746D-954CBF656936"/>
 </associations>
 </Column>
+<Column name="id_tipo_voto" id="C9300BEE-EF0C-4E30-3B03-0EB24F034744">
+<createdBy>matheus.schmitz</createdBy>
+<createdTime>2016-10-18 19:38:00 UTC</createdTime>
+<ownerDesignName>modeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="data_voto" id="7F006E3B-4B78-0D49-1296-8D6C2F879953">
 <createdBy>matheus.schmitz</createdBy>
 <createdTime>2016-10-18 19:11:06 UTC</createdTime>
