@@ -36,19 +36,17 @@ select NomeEmpregado, Salario,
 	End percentualDescIR 
 from Empregado;
 /*7) Liste o nome do empregado,o nome do gerente, e o departamento de cada um.*/
-select e.NomeEmpregado, de.NomeDepartamento DepartamentoEmpregado, g.NomeEmpregado NomeGerente, dg.NomeDepartamento DepartamentoGerado from Empregado e
+select e.NomeEmpregado, g.NomeEmpregado NomeGerente, de.NomeDepartamento DepartamentoEmpregado, dg.NomeDepartamento DepartamentoGerado from Empregado e
 	left join Empregado g on e.IDGerente = g.IDEmpregado
 	left join Departamento de on de.IDDepartamento = e.IDDepartamento
 	left join Departamento dg on dg.IDDepartamento = g.IDDepartamento;
 /*8) Faça uma cópia da tabela Empregado e altere o salário de todos os empregados (Empregado) que o departamento fique na localidade de SAO PAULO, faça um reajuste de 14,5%*/
-select e.IDEmpregado, e.NomeEmpregado, e.Cargo, e.IDGerente, e.DataAdmissao, 
-Case	when d.Localizacao = 'SAO PAULO' then Salario*1.145
-		else Salario
-End Salario,
-e.Comissao, e.IDDepartamento
-into CopiaEmpregado 
-from Empregado e
-inner join Departamento d on e.IDDepartamento = d.IDDepartamento;
+select * into CopiaEmpregado from Empregado
+begin transaction
+update Empregado
+set Salario = Salario * 1.145
+where exists (select * from Departamento where Departamento.IDDepartamento = Empregado.IDEmpregado and Departamento.Localizacao = 'Sao Paulo')
+
 /*9)Liste a diferença que representará o reajuste aplicado no item anterior no somatóriodos salários de todosos empregados.*/
 select (sum(c.Salario) - sum(e.Salario)) DiferecaSomaSalario 
 from Empregado e
@@ -59,5 +57,6 @@ select top 1 with ties
 	   d.NomeDepartamento
 from Empregado e
 left join Departamento d on e.IDDepartamento = d.IDDepartamento
+where e.IDDepartamento is not null
 group by e.Salario, d.NomeDepartamento
 order by e.Salario desc;

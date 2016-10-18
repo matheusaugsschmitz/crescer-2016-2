@@ -1,9 +1,8 @@
 --1) Liste o total de pedidos realizados no mês de setembro de 2016.
 --select * from pedido;
-select count(*) as TotalPedidosSetembor2016 
-from pedido 
-group by year(DataEntrega), month(DataEntrega)
-having month(DataEntrega) = 9 and year(DataEntrega) = 2016;
+select count(*) as TotalPedidosSetembro2016
+from Pedido
+where DataPedido between convert(datetime, '01/09/2016', 103) and convert(datetime, '30/09/2016', 103)+.99999
 
 --2) Liste quais os produtos que utilizam o material de IDMaterial = 15836. Intranet #15836
 select p.IDProduto, p.Nome, p.DataCadastro, p.PrecoCusto, p.PrecoVenda, p.Situacao 
@@ -16,7 +15,7 @@ where m.IDMaterial = 15836;
 select IDCliente, Nome, RazaoSocial, Endereco, Bairro, IDCidade, CEP, Situacao 
 from cliente 
 where Nome like '%LTDA%' 
-	  or RazaoSocial like '%LTDA%';
+   or RazaoSocial like '%LTDA%';
 
 /*4) Crie (insira) um novo registro na tabela de Produto, com as seguintes informações:
 Nome: Galocha Maragato
@@ -33,7 +32,3 @@ select * from Produto p where not Exists (Select * from PedidoItem where IDProdu
 
 /*6) Identifique qual o estado (coluna UF da tabela Cidade) possuí o maior número de clientes (tabela Cliente), 
 liste também qual o Estado possuí o menor número de clientes.*/
-select count(*) cont from Cliente cl
-inner join Cidade cd on cd.IDCidade = cl.IDCidade
-group by UF
-order by cont desc
