@@ -1,0 +1,54 @@
+body{
+    background: url('../imgs/ryusf51.png') no-repeat;
+    font-family: arial;
+    background-position: 50% 0%;
+}
+.principal{
+    width: 702px;
+    margin: auto;
+}
+.menu{
+    background-color: rgba(132, 132, 132, 0.5);
+    margin: 250px auto 61px;
+    border: 1px solid #C0C0C0;
+    width: 502px;
+    height: 35px;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+.menu > a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 37px;
+}
+.cabecalho{
+    background-color: #444444;
+    height: 63px;
+    padding-top: 15px;
+}
+.cabecalho h2:first-child{
+    color: #ffffff;
+    margin: 10px 0 0 10px;
+}
+.informacoes{
+    height: auto;
+    width: 672px;
+    background-color: #EDEDED;
+    padding: 1px 15px 0;
+    overflow: auto;
+}
+.dados > p{
+    margin: 0;
+}
+.img-descricao{
+    height: 480px;
+    width: 259px;
+    float: left;
+}
+.blanka div:first-child{
+    background-image: url('../imgs/blanka.png');
+}
+.perfil div:first-child{
+    background-image: url('../imgs/adon.png');
+}
