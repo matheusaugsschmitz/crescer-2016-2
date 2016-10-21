@@ -1,0 +1,26 @@
+header, footer{
+    height: 50px;
+    width: 100%;
+    background: #ccc;
+    position: fixed;
+    left: 0;
+}
+header{
+    top: 0;
+}
+footer{
+    bottom: 0;
+}
+.quadrado-central{
+    height: 300px;
+    width: 300px;
+    background: #888;
+    margin: 200px auto;
+    position: relative;
+}
+.quadrado{
+    height: 80px;
+    width: 80px;
+    background: #444;
+    position: absolute;
+}
