@@ -6,7 +6,7 @@ function Elfo(nome, flechas){
 Elfo.prototype.atirarFlecha = function(){
   this.flechas--;
 }
-
+//OU
 class Elfo{
   constructor(nome, flechas = 42){
     this._nome = nome;
