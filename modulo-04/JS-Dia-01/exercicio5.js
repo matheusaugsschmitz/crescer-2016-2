@@ -1,18 +1,19 @@
-//EXERCICIO 5 -- incompleto
-var iguais = function(param1, param2){
-  var verificacao = true;
-  if(typeof param1 === 'object' && typeof param2 === 'object'){
-    for(int i = 0, len = param1.length; i < len; i++){
-      if(typeof param1[i] === 'object' && typeof param2[i] === 'object'){
-          if(!iguais(param1[i], param2[i])){
-            verificacao = false;
-          }
-      }else{
-
-      }
-    }
-    return verificacao;
-  }else{
-    return param1 === param2;
+//EXERCICIO 5
+function iguais(param1, param2){
+  function ehObjeto(obj){
+    return typeof obj === 'object';
   }
+
+  if(ehObjeto(param1) && ehObjeto(param2)){
+    if(Object.keys(param1).length !== Object.keys(param2).length){
+      return false;
+    }
+
+    for(let prop in param1){
+      let saoIguais = iguais(param1[prop], param2[prop]);
+      if(!saoIguais) return false;
+    }
+    return true;
+  }
+  return param1 === param2;
 }
