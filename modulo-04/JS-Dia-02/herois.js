@@ -3,27 +3,46 @@ class Herois{
     this.herois = array;
   }
   foraDaGuerraCivil() {
-    /*let heroisPacificos = [];
-    for (let i = 0, len = this.herois.length; i < len; i++) {
-      let heroiAtual = this.herois[i];
-      let ehDeBoas = true;
-      for(let i1 = 0, len1 = heroiAtual.events.items.length; i1 < len1; i1++){
-        let itemAtual = heroiAtual.events.items[i1];
-        if(itemAtual.name.includes('Civil War')){
-          ehDeBoas = false;
-          break;
-        }
-      }
-      if(ehDeBoas){
-        heroisPacificos.push(this.herois[i]);
-      }
-    }
-    console.log(heroisPacificos);*/
     return this.herois.filter(heroi =>
-      herio.events.item.filter
-    )
+      heroi.events.items.filter(e => e.name.contem('Civil WAr', true)).length === 0
+    );
   }
-}/*
-String.prototype.toBacon = function () {
-  return this + "BACON!!!";
-};*/
+  maisPublicado(){
+    return this.herois.sort( (h1, h2) => {
+      h2.comics.available - h1.comics.available
+    })[0];
+  }
+  mediaPaginas(){
+    let totalPag =
+      this.herois
+        .map( heroi =>
+          heroi.comics.items.reduce( (acum, comic) => acum + comic.pageCount, 0)
+        )
+        .reduce( (acum, paginas ) => acum + paginas);
+    return totalPag / this.herois.length;
+  }
+
+  seriesPorLongevidade(){
+    let todasSeries = [];
+    this.herois.forEach(heroi => {
+      todasSeries = todasSeries.concat(heroi.series.items)
+    });
+    let diff = serie => serie.endYear - serie.startYear;
+    return todasSeries.sort((serie1, serie2) => diff(serie1) - diff(serie2));
+  }
+
+  comicMaisCara() {
+   let todasComics = []
+   this.herois.forEach(heroi => {
+     todasComics = todasComics.concat(heroi.comics.items);
+   });
+
+   let totalizarPrecos = comic => comic.prices.reduce(
+     (acc, objetoPreco) => acc + objetoPreco.price
+   , 0);
+
+   return todasComics.sort(
+     (comic1, comic2) => totalizarPrecos(comic2) - totalizarPrecos(comic1)
+   )[0]
+  }
+}

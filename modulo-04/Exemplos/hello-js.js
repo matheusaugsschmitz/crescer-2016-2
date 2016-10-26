@@ -29,3 +29,7 @@ elfo.nome = 'Fingolfin'
 //dadosHerois.reduce( (ac, heroi) => ac + heroi.comics.available, 0)
 
 //Array(10).join('js' - 1) + ' Batman!';
+/*
+String.prototype.toBacon = function () {
+  return this + "BACON!!!";
+};*/
