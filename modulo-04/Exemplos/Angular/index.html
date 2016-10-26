@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="IndexController">
+    <button type="text" name="button"></button>
+    <ul>
+      <li ng-repeat="heroi in herois">
+        <span>{{heroi.nome}}</span>
+        <img height="200px" ng-src="{{heroi.thumbnail.path}}.{{heroi.thumbnail.extension}}" alt="" />
+        <button ng-click="excluir($index)">Excluir</button>
+      </li>
+    </ul>
+    <input type="text" ng-model="nome"> {{ nome}}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  </body>
+</html>
