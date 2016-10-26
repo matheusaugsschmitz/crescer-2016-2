@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="helloAngular">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body ng-controller="IndexController">
-    <button type="text" name="button"></button>
+    <button ng-click="adicionarHeroi()">Adicionar Herói</button>
+    <input type="text" ng-model="filtro" placeholder="Ex: Spider">
     <ul>
-      <li ng-repeat="heroi in herois">
-        <span>{{heroi.nome}}</span>
-        <img height="200px" ng-src="{{heroi.thumbnail.path}}.{{heroi.thumbnail.extension}}" alt="" />
+      <li ng-repeat="heroi in herois | filter: { name: filtro }">
+        <span>{{ heroi.name }}</span>
+        <img height="200" ng-src="{{ heroi.thumbnail.path }}.{{ heroi.thumbnail.extension }}"/>
         <button ng-click="excluir($index)">Excluir</button>
       </li>
     </ul>
-    <input type="text" ng-model="nome"> {{ nome}}
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="js/marvel.js"></script>
+    <script type="text/javascript" src="js/indexController.js"></script>
   </body>
 </html>

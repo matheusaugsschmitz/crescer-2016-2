@@ -1,10 +1,10 @@
-angular.module('hellpAngular', [])
-  .controller('IndexController', function($scope){
+angular.module('helloAngular', [])
+  .controller('IndexController', function($scope) {
     $scope.herois = marvel;
-    $scope.adicionarHeroi = function(){
-      $scope.herois.push({ name: 'Super Debug'});
+    $scope.adicionarHeroi = function() {
+      $scope.herois.push({ name: 'Super Debug' });
+    };
+    $scope.excluir = function($index) {
+      $scope.herois.splice($index, 1);
     }
-    $scope.excluir = function($index){
-
-    }
-  })
+  });
