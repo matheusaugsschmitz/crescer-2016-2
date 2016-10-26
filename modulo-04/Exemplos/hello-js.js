@@ -26,5 +26,6 @@ elfo.nome = 'Fingolfin'
 //[] + [] = ""
 //[] + {} = [object Object]
 //{} +[] = 0
+//dadosHerois.reduce( (ac, heroi) => ac + heroi.comics.available, 0)
 
 //Array(10).join('js' - 1) + ' Batman!';
