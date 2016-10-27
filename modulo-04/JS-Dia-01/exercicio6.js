@@ -1,6 +1,6 @@
 //EXERCICIO 6
 var ctrlC = function(param){
-  var retorno;
+  let retorno;
   if(typeof param === 'array' || typeof param === 'object'){
     retorno = typeof param === 'array' ? [] : {};
     for(let prop in param){

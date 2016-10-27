@@ -117,4 +117,5 @@ describe('Herois', () => {
       let comicMaisCara = new Herois(marvel).comicMaisCara();
       expect(comicMaisCara.id).toEqual(58609);
     })
+  })
 })

@@ -6,4 +6,5 @@ var mesclar = function(param1, param2, recursiva = false){
       param1[prop] = param2[prop];
     }
   }
+  return param1;
 }
