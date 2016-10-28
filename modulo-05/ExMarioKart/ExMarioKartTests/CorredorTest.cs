@@ -10,10 +10,18 @@ namespace ExMarioKartTests
         [TestMethod]
         public void CorredorComNivel1RetornaNivelNoob()
         {
-            var corredor = new Corredor("Usain", "Noob");
+            var corredor = new Corredor("Usain", NiveisDeHabilidade.Noob);
 
             Assert.AreEqual("Usain", corredor.Nome);
-            Assert.AreEqual("Noob", corredor.NivelHabilidade);
+            Assert.AreEqual(NiveisDeHabilidade.Noob, corredor.NivelHabilidade);
+        }
+        [TestMethod]
+        public void CorredorSemNivelViraNivelNoob()
+        {
+            var corredor = new Corredor("Usain");
+
+            Assert.AreEqual("Usain", corredor.Nome);
+            Assert.AreEqual(NiveisDeHabilidade.Noob, corredor.NivelHabilidade);
         }
     }
 }

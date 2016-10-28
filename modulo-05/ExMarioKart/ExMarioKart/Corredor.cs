@@ -6,34 +6,21 @@ using System.Threading.Tasks;
 
 namespace ExMarioKart
 {
+    public enum NiveisDeHabilidade
+    {
+        Noob,
+        Mediano,
+        Profissional
+    }
     public class Corredor
     {
-        public Corredor(string nome, string nivel = "Noob")
+        
+        public Corredor(string nome, NiveisDeHabilidade nivel = NiveisDeHabilidade.Noob)
         {
             this.Nome = nome;
-            this.nivelHabilidade = nivel;
+            this.NivelHabilidade = nivel;
         }
         public string Nome { get; private set; }
-        private String nivelHabilidade;
-        public String NivelHabilidade
-        {
-            get
-            {
-                return this.nivelHabilidade;
-            }
-
-            set
-            {
-                bool ehUmNivelValido = "Noob".Equals(value) || "Mediano".Equals(value) || "Profissional".Equals(value);
-                if (ehUmNivelValido)
-                {
-                    this.nivelHabilidade = value;
-                }
-                else
-                {
-                    this.nivelHabilidade = "Noob";
-                }
-            }
-        }
+        public NiveisDeHabilidade NivelHabilidade{ get; set; }
     }
 }
