@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ExMarioKart
 {
-    public class PneusDeCouroDeDragão : IEquipamento
+    public class MotorABaseDeLava : IEquipamento
     {
         public int BonusVelocidade
         {
             get
             {
-                return 2;
+                return 3;
             }
         }
     }

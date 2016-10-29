@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ExMarioKart
 {
-    class Kart
+    public class Kart
     {
         public Kart(Corredor corredor)
         {
             this.CorredorDoKart = corredor;
+            this.Equipamentos = new List<IEquipamento>();
         }
 
         public Corredor CorredorDoKart { get; set; }
-        public List<Equipamento> Equipamentos { get; set; }
-        private int velocidade;
+        public List<IEquipamento> Equipamentos { get; set; }
         public int Velocidade
         {
             get
@@ -25,14 +25,15 @@ namespace ExMarioKart
                 {
                     v += item.BonusVelocidade;
                 }
+                if (CorredorDoKart.NivelHabilidade == NiveisDeHabilidade.Noob)
+                {
+                    v += 3;
+                }else
+                {
+                    v += CorredorDoKart.NivelHabilidade == NiveisDeHabilidade.Mediano ? 5 : 6 + Equipamentos.Count;
+                }
+                return v;
             }
         }
-A velocidade de um kart é a seguinte soma:
-3 + a soma dos bônus de todos os equipamentos + bônus de habilidade do Corredor(Noob: 3, Mediano: 5, Profissional: 6 + quantidade de equipamentos no kart)
-Equipamentos
-Existem os seguintes equipamentos que podem ser equipados:
-
-Pneus de Couro de Dragão(Bônus + 2)
-Motor a base de Lava(Bônus + 3)
     }
 }

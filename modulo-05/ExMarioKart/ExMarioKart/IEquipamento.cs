@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExMarioKart
 {
-    interface IEquipamento
+    public interface IEquipamento
     {
         int BonusVelocidade { get; }
     }

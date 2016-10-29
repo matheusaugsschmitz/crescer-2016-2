@@ -23,5 +23,13 @@ namespace ExMarioKartTests
             Assert.AreEqual("Usain", corredor.Nome);
             Assert.AreEqual(NiveisDeHabilidade.Noob, corredor.NivelHabilidade);
         }
+        [TestMethod]
+        public void CorredorMedianoPossuiDefinicaoExata()
+        {
+            var corredor = new Corredor("Usain", NiveisDeHabilidade.Mediano);
+
+            Assert.AreEqual("Usain", corredor.Nome);
+            Assert.AreEqual(NiveisDeHabilidade.Mediano, corredor.NivelHabilidade);
+        }
     }
 }
