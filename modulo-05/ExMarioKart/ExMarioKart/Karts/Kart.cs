@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ExMarioKart.Equipamento;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExMarioKart
+namespace ExMarioKart.Karts
 {
     public class Kart
     {
@@ -16,23 +17,32 @@ namespace ExMarioKart
 
         public Corredor CorredorDoKart { get; set; }
         public List<IEquipamento> Equipamentos { get; set; }
-        public int Velocidade
+        public virtual int Velocidade
         {
-            get
+             get
             {
                 int v = 3;
                 foreach (var item in Equipamentos)
                 {
                     v += item.BonusVelocidade;
                 }
+                v += BonusVelocidadeDoCorredor;
+                return v;
+            }
+        }
+        protected int BonusVelocidadeDoCorredor
+        {
+            get
+            {
                 if (CorredorDoKart.NivelHabilidade == NiveisDeHabilidade.Noob)
                 {
-                    v += 3;
-                }else
-                {
-                    v += CorredorDoKart.NivelHabilidade == NiveisDeHabilidade.Mediano ? 5 : 6 + Equipamentos.Count;
+                    return 3;
                 }
-                return v;
+                if (CorredorDoKart.NivelHabilidade == NiveisDeHabilidade.Mediano)
+                {
+                    return 5;
+                }
+                return 6 + this.Equipamentos.Count;
             }
         }
     }
