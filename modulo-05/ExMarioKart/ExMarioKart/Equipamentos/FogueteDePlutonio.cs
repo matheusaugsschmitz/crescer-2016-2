@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace ExMarioKart.Equipamentos
 {
-    public class MotorABaseDeLava : IEquipamento
+    public class FogueteDePlutonio : IEquipamento
     {
+        public FogueteDePlutonio(int nivel)
+        {
+            this.Nivel = nivel >= 1 && nivel <= 5 ? nivel : 2;
+        }
         public int BonusVelocidade
         {
             get
             {
-                return 3;
+                return Nivel;
             }
         }
+
+        public int Nivel { get; private set; }
     }
 }

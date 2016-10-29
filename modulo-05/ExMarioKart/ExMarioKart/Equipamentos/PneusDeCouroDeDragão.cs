@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExMarioKart.Equipamento
+namespace ExMarioKart.Equipamentos
 {
     public class PneusDeCouroDeDragão : IEquipamento
     {
