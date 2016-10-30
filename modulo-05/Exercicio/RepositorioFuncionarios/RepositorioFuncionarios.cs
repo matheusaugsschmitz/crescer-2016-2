@@ -147,12 +147,14 @@ namespace Repositorio
 
         public IList<dynamic> BuscaRapida()
         {
-            throw new NotImplementedException();
+            var funcionariosFiltrado = this.Funcionarios.Select(funcionario => new { NomeFuncionario = funcionario.Nome, TituloCargo = funcionario.Cargo.Titulo }).ToArray();
+            return funcionariosFiltrado;
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
         {
-            throw new NotImplementedException();
+            var funcionariosFiltrado = this.Funcionarios.GroupBy(funcionario => funcionario.TurnoTrabalho).Select(turno => new { Turno = turno.Key, Quantidade = turno.Count() }).ToArray();
+            return funcionariosFiltrado;
         }
 
         public dynamic FuncionarioMaisComplexo()
