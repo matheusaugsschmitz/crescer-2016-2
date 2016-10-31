@@ -85,19 +85,26 @@ namespace Repositorio
 
         public IList<Funcionario> BuscarPorCargo(Cargo cargo)
         {
-            var funcionariosFiltrado = this.Funcionarios.Where(funcionario => funcionario.Cargo.Equals(cargo)).ToList();
+            var funcionariosFiltrado = this.Funcionarios
+                .Where(funcionario => funcionario.Cargo.Equals(cargo))
+                .ToList();
             return funcionariosFiltrado;
         }
 
         public IList<Funcionario> OrdenadosPorCargo()
         {
-            var funcionariosOrdenados = this.Funcionarios.OrderBy(funcionario => funcionario.Cargo.Titulo).ThenBy(funcionario => funcionario.Nome).ToList();
+            var funcionariosOrdenados = this.Funcionarios
+                .OrderBy(funcionario => funcionario.Cargo.Titulo)
+                .ThenBy(funcionario => funcionario.Nome)
+                .ToList();
             return funcionariosOrdenados;
         }
 
         public IList<Funcionario> BuscarPorNome(string nome)
         {
-            var funcionariosFiltrado = this.Funcionarios.Where(funcionario => funcionario.Nome.IndexOf(nome, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            var funcionariosFiltrado = this.Funcionarios
+                .Where(funcionario => funcionario.Nome.IndexOf(nome, StringComparison.InvariantCultureIgnoreCase) >= 0)
+                .ToList();
             return funcionariosFiltrado;
         }        
 
@@ -108,15 +115,18 @@ namespace Repositorio
             {
                 return this.Funcionarios.OrderBy(funcionario => funcionario.Cargo.Titulo).ToList();
             }
-            var funcionariosFiltrado = this.Funcionarios.Where(funcionario =>  listTurnos.Any(turno => turno == funcionario.TurnoTrabalho)).ToList();
+            var funcionariosFiltrado = this.Funcionarios
+                .Where(funcionario =>  listTurnos.Any(turno => turno == funcionario.TurnoTrabalho))
+                .ToList();
             return funcionariosFiltrado;
         }        
 
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
         {
-            var funcionariosFiltrado = this.Funcionarios.Where(funcionario => 
-            (DateTime.Now.Year - funcionario.DataNascimento.Year) <= idade+5 && (DateTime.Now.Year - funcionario.DataNascimento.Year)  >= idade-5
-            ).ToList();
+            var funcionariosFiltrado = this.Funcionarios
+                .Where(funcionario => (DateTime.Now.Year - funcionario.DataNascimento.Year) <= idade+5 && 
+                                      (DateTime.Now.Year - funcionario.DataNascimento.Year)  >= idade-5)
+                .ToList();
             return funcionariosFiltrado;
         }        
 
@@ -130,7 +140,9 @@ namespace Repositorio
             }
             else
             {
-                funcionariosFiltrado = this.Funcionarios.Where(funcionario => funcionario.TurnoTrabalho == turno).ToList();
+                funcionariosFiltrado = this.Funcionarios
+                    .Where(funcionario => funcionario.TurnoTrabalho == turno)
+                    .ToList();
             }
             foreach (var funcionario in funcionariosFiltrado)
             {
@@ -141,13 +153,18 @@ namespace Repositorio
 
         public IList<Funcionario> AniversariantesDoMes()
         {
-            var funcionariosFiltrado = this.Funcionarios.Where(funcionario => DateTime.Now.Month == funcionario.DataNascimento.Month).ToList();
+            var funcionariosFiltrado = this.Funcionarios
+                .Where(funcionario => DateTime.Now.Month == funcionario.DataNascimento.Month)
+                .ToList();
             return funcionariosFiltrado;
         }
 
         public IList<dynamic> BuscaRapida()
         {
-            var funcionariosFiltrado = this.Funcionarios.Select(funcionario => new { NomeFuncionario = funcionario.Nome, TituloCargo = funcionario.Cargo.Titulo }).ToArray();
+            var funcionariosFiltrado = this.Funcionarios
+                .Select(funcionario => (dynamic)new { NomeFuncionario = funcionario.Nome,
+                                                      TituloCargo = funcionario.Cargo.Titulo })
+                .ToList();
             return funcionariosFiltrado;
         }
 
@@ -155,16 +172,21 @@ namespace Repositorio
         {
             var funcionariosFiltrado = this.Funcionarios
                 .GroupBy(funcionario => funcionario.TurnoTrabalho)
-                .Select(turno => new { Turno = turno.Key, Quantidade = turno.Count() })
-                .ToArray();
+                .Select(turno => (dynamic)new { Turno = turno.Key, Quantidade = turno.Count() })
+                .ToList();
             return funcionariosFiltrado;
         }
 
         public dynamic FuncionarioMaisComplexo()
         {
             var funcionarioFiltrado = this.Funcionarios
-                .Where(funcionario => !funcionario.Cargo.Titulo.Equals("Desenvolvedor Júnior") && funcionario.TurnoTrabalho != TurnoTrabalho.Tarde)
-                .OrderBy(funcionario => funcionario.Nome.Count(x => (x != 'a') && (x != 'e') && (x != 'i') && (x != 'o') && (x != 'u')))
+                .Where(funcionario => !funcionario.Cargo.Titulo.Equals("Desenvolvedor Júnior") && 
+                                       funcionario.TurnoTrabalho != TurnoTrabalho.Tarde)
+                .OrderBy(funcionario => funcionario.Nome.Count(x => (x != 'a') && 
+                                                                    (x != 'e') && 
+                                                                    (x != 'i') && 
+                                                                    (x != 'o') && 
+                                                                    (x != 'u')))
                 .Last();
             var quantidadeFuncionariosCargo = this.Funcionarios
                 .Where(funcionario => funcionario.Cargo == funcionarioFiltrado.Cargo)
