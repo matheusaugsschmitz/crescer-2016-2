@@ -28,13 +28,14 @@ namespace StreetFighter.Web.Controllers
             model.EstiloDeLuta = "peleia Selvagem autodidata(Army Ants) / Capoeira";
             model.Origem = "Brasil(lugar de nascença é provável como sendo Tailândia)";
             model.FalaDeVitoria = "Ver tu em ação é uma piada!";
-            /*
-SSF2 nickname: "A selvagem piá da natureza".
-SFA3 nickname: "A animal pessoa amazônica".
-SF4 nickname: "Guerreiro da selva".
-SFA3 stage: Ramificação do Rio Madeira -pantano, Brasil(ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?).
-SF2 stage: Bacia do rio Amazonas (Brasil).
-Golpes especiais famosos: Electric Thunder, Rolling Attack.*/
+            model.SSF2Nickname = "A selvagem piá da natureza";
+            model.SFA3Nickname = "A animal pessoa amazônica";
+            model.SF4Nickname = "Guerreiro da selva";
+            model.SFA3Stage = "Ramificação do Rio Madeira -pantano, Brasil(ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?)";
+            model.SF2Stage = "Bacia do rio Amazonas (Brasil)";
+            model.GolpesEspeciais = new List<string> { "Electric Thunder", "Rolling Attack" };
+
+            return View(model);
         }
     }
 }

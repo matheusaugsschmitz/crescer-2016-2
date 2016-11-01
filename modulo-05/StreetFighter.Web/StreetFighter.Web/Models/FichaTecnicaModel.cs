@@ -24,6 +24,6 @@ namespace StreetFighter.Web.Models
         public string SF4Nickname { get; set; }
         public string SFA3Stage { get; set; }
         public string SF2Stage { get; set; }
-        public List<string> GolpesEspecial { get; set; }
+        public List<string> GolpesEspeciais { get; set; }
     }
 }
