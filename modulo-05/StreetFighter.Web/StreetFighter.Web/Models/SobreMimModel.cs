@@ -5,13 +5,13 @@ using System.Web;
 
 namespace StreetFighter.Web.Models
 {
-    public class FichaTecnicaModel
+    public class SobreMimModel
     {
         public string Nome { get; set; }
         public string PrimeiraAparicao { get; set; }
         public DateTime Nascimento { get; set; }
         public int Altura { get; set; }
-        public double Peso { get; set; }
+        public string Peso { get; set; }
         public List<string> Medidas { get; set; }
         public string TipoSanguineo { get; set; }
         public List<string> HabilidadesEspeciais { get; set; }
@@ -20,11 +20,6 @@ namespace StreetFighter.Web.Models
         public string EstiloDeLuta { get; set; }
         public string Origem { get; set; }
         public string FalaDeVitoria { get; set; }
-        public string SSF2Nickname { get; set; }
-        public string SFA3Nickname { get; set; }
-        public string SF4Nickname { get; set; }
-        public string SFA3Stage { get; set; }
-        public string SF2Stage { get; set; }
         public List<string> GolpesEspeciais { get; set; }
     }
 }

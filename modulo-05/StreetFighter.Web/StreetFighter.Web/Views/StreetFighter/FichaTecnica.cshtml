@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "Ficha Técnica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="informacoes">
+    <h1>@Model.Nome</h1>
+    <div class="blanka">
+        <div class="img-descricao"></div>
+        <div class="dados">
+            <p>
+                <strong>
+                    Primeira aparição: 
+                </strong>
+                @Model.PrimeiraAparicao
+            </p>
+            <p>
+                <strong>
+                    Nascimento:
+                </strong> 
+                @{ 
+                    var meses = new List<string> { "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" };
+                }
+                @Model.Nascimento.Day de @meses[@Model.Nascimento.Month - 1] de @Model.Nascimento.Year.
+            </p>
+            <p>
+                <strong>
+                    Altura:
+                </strong>  
+               @(Model.Altura)cm.
+            </p>
+            <p>
+                <strong>
+                    Peso:
+                </strong>  
+               @(Model.Peso)kg.
+            </p>
+            <p>
+                <strong>
+                    Medidas:
+                </strong>  
+               @{for (int i = 0; i < Model.Medidas.Count; i++)
+                   {
+                       if (i == Model.Medidas.Count - 1)
+                       {
+                           <text>@Model.Medidas[i].</text>
+                       }
+                       else
+                       {
+                           <text>@Model.Medidas[i],</text>
+                       }
+
+                   }
+               }
+            </p>
+            <p>
+                <strong>
+                    Tipo sanguíneo:
+                </strong>  
+               @Model.TipoSanguineo.
+            </p>
+            <p>
+                <strong>
+                    Habilidades especiais:
+                </strong>  
+                @{for (int i = 0; i < Model.HabilidadesEspeciais.Count; i++)
+                    {
+                        if (i == Model.HabilidadesEspeciais.Count - 1)
+                        {
+                            <text>@Model.HabilidadesEspeciais[i].</text>
+                        }
+                        else
+                        {
+                            <text>@Model.HabilidadesEspeciais[i],</text>
+                        }
+
+                    }
+                }
+            </p>
+            <p>
+                <strong>
+                    Gosta:
+                </strong>  
+                @{for (int i = 0; i < Model.CoisasQueGosta.Count; i++)
+                    {
+                        if (i == Model.CoisasQueGosta.Count - 1)
+                        {
+                        <text>@Model.CoisasQueGosta[i].</text>
+                        }
+                        else
+                        {
+                        <text>@Model.CoisasQueGosta[i],</text>
+                        }
+
+                    }
+                }
+            </p>
+            <p>
+                <strong>
+                    Desgosta:
+                </strong>  
+               @{for (int i = 0; i < Model.CoisasQueDesgosta.Count; i++)
+                 {
+                    if (i == Model.CoisasQueDesgosta.Count - 1)
+                    {
+                       <text>@Model.CoisasQueDesgosta[i].</text>
+                    }
+                    else
+                    {
+                       <text>@Model.CoisasQueDesgosta[i],</text>
+                    }
+
+                 }
+               }
+
+            </p>
+            <p>
+                <strong>
+                    Estilo de luta:
+                </strong>   
+                @Model.EstiloDeLuta.
+            </p>
+            <p>
+                <strong>
+                    Origem:
+                </strong>  
+                @Model.Origem.
+            </p>
+            <p>
+                <strong>
+                    Uma fala de vitória:
+                </strong>  
+                "@Model.FalaDeVitoria".
+            </p>
+            <p> 
+                <strong>
+                    SSF2 nickname:
+                </strong>  
+                "@Model.SSF2Nickname".
+            </p>
+            <p>
+                <strong>
+                    SFA3 nickname:
+                </strong>  
+                "@Model.SFA3Nickname".
+            </p>
+            <p>
+                <strong>
+                    SF4 nickname:
+                </strong>  
+                "@Model.SF4Nickname".
+            </p>
+            <p>
+                <strong>
+                    SFA3 stage:
+                </strong>  
+                @Model.SFA3Stage.
+            </p>
+            <p>
+                <strong>
+                    SF2 stage:
+                </strong>  
+                @Model.SF2Stage.
+            </p>
+            <p>
+                <strong>
+                    Golpes especiais famosos:
+                </strong>  
+                @{for (int i = 0; i < Model.GolpesEspeciais.Count; i++)
+                    {
+                        if (i == Model.GolpesEspeciais.Count - 1)
+                        {
+                        <text>@Model.GolpesEspeciais[i].</text>
+                        }
+                        else
+                        {
+                        <text>@Model.GolpesEspeciais[i],</text>
+                        }
+
+                    }
+                }
+            </p>
+        </div>
+    </div>
+</div>

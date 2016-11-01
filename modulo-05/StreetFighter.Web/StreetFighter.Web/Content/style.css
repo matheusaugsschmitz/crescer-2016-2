@@ -47,8 +47,8 @@ body{
     float: left;
 }
 .blanka div:first-child{
-    background-image: url('Images/blanka.png');
+    background-image: url('~/Content/Images/blanka.png');
 }
 .perfil div:first-child{
-    background-image: url('Images/adon.png');
+    background-image: url('~/Content/Images/adon.png');
 }
