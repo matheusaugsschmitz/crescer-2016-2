@@ -12,11 +12,13 @@ namespace StreetFighter.Web.Models
         public string Imagem { get; set; }
         [Required]
         public string Nome { get; set; }
-        [DataType(DataType.Date, ErrorMessage = "Por favor insira uma data válida.")]
+        [DataType(DataType.Date, ErrorMessage = "Insira uma data válida!")]
         public DateTime Nascimento { get; set; }
+        [RegularExpression("\\d+", ErrorMessage = "Insira uma altura válida!")]
         [DisplayName("Altura (cm)")]
         public int Altura { get; set; }
-        [DisplayName("Altura (kg)")]
+        [RegularExpression("\\d+", ErrorMessage = "Insira um peso válido!")]
+        [DisplayName("Peso (kg)")]
         public double Peso { get; set; }
         [Required]
         [DisplayName("País de Origem")]
