@@ -16,31 +16,21 @@ namespace StreetFighter.Web.Controllers
         public ActionResult FichaTecnica()
         {
             var model = new FichaTecnicaModel();
+            model.Imagem = "/../../Content/Images/blanka.png";
             model.Nome = "Blanka";
-            model.PrimeiraAparicao = "Street Fighter II The World Warrior (1991)";
             model.Nascimento = Convert.ToDateTime("12/02/1966");
             model.Altura = 192;
             model.Peso = 96;
-            model.Medidas = new List<string> { "B198", "C120", "Q172" };
-            model.TipoSanguineo = "B";
-            model.HabilidadesEspeciais = new List<string> { "Caçar", "Eletricidade" };
-            model.CoisasQueGosta = new List<string> { "Frutas tropicais", "Pirarucu"};
-            model.CoisasQueDesgosta = new List<string> { "Army ants (espécie de formiga)" };
-            model.EstiloDeLuta = "peleia Selvagem autodidata (Army Ants) / Capoeira";
             model.Origem = "Brasil (lugar de nascença é provável como sendo Tailândia)";
-            model.FalaDeVitoria = "Ver tu em ação é uma piada!";
-            model.SSF2Nickname = "A selvagem piá da natureza";
-            model.SFA3Nickname = "A animal pessoa amazônica";
-            model.SF4Nickname = "Guerreiro da selva";
-            model.SFA3Stage = "Ramificação do Rio Madeira - pantano, Brasil (ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?)";
-            model.SF2Stage = "Bacia do rio Amazonas (Brasil)";
-            model.GolpesEspeciais = new List<string> { "Electric Thunder", "Rolling Attack" };
+            model.GolpesEspeciais = "Electric Thunder, Rolling Attack" ;
+            model.PersonagemOculto = false;
 
             return View(model);
         }
         public ActionResult SobreMim()
         {
             var model = new SobreMimModel();
+            model.Imagem = "/../../Content/Images/adon.png";
             model.Nome = "Matheus Augusto";
             model.PrimeiraAparicao = "Hospital (1998)";
             model.Nascimento = Convert.ToDateTime("30/08/1998");
@@ -54,9 +44,64 @@ namespace StreetFighter.Web.Controllers
             model.EstiloDeLuta = "Cheio dos paranaue";
             model.Origem = "Brasil (lugar de nascença é provável como sendo o Brasil mesmo)";
             model.FalaDeVitoria = "Ha ha!";
-            model.GolpesEspeciais = new List<string> { "Atordoamento da piada ruim", "trocadilhos ninjas" };
+            model.GolpesEspeciais = new List<string> { "Atordoamento da piada ruim", "trocadilhos ninjas"};
 
             return View(model);
+        }
+        public ActionResult Cadastro()
+        {
+            PopularPaises();
+            return View();
+        }
+        public ActionResult Salvar(FichaTecnicaModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("FichaTecnica", model);
+            }
+            else
+            {
+                ModelState.AddModelError("", "O cadastro falhou!");
+                PopularPaises();
+                return View("Cadastro", model);
+            }
+        }
+        private void PopularPaises()
+        {
+            ViewBag.ListaPaises = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value = "AF", Text = "Afeganistão" },
+                new SelectListItem() { Value = "ZA", Text = "África do Sul" },
+                new SelectListItem() { Value = "AL", Text = "Albânia" },
+                new SelectListItem() { Value = "DE", Text = "Alemanha" },
+                new SelectListItem() { Value = "AD", Text = "Andorra" },
+                new SelectListItem() { Value = "AO", Text = "Angola" },
+                new SelectListItem() { Value = "AI", Text = "Anguilla" },
+                new SelectListItem() { Value = "AQ", Text = "Antártida" },
+                new SelectListItem() { Value = "AG", Text = "Antígua e Barbuda" },
+                new SelectListItem() { Value = "AN", Text = "Antilhas Holandesas" },
+                new SelectListItem() { Value = "SA", Text = "Arábia Saudita" },
+                new SelectListItem() { Value = "DZ", Text = "Argélia" },
+                new SelectListItem() { Value = "AR", Text = "Argentina" },
+                new SelectListItem() { Value = "AM", Text = "Armênia" },
+                new SelectListItem() { Value = "AW", Text = "Aruba" },
+                new SelectListItem() { Value = "AU", Text = "Austrália" },
+                new SelectListItem() { Value = "AT", Text = "Áustria" },
+                new SelectListItem() { Value = "AZ", Text = "Azerbaijão" },
+                new SelectListItem() { Value = "BS", Text = "Bahamas" },
+                new SelectListItem() { Value = "BH", Text = "Bahrein" },
+                new SelectListItem() { Value = "BD", Text = "Bangladesh" },
+                new SelectListItem() { Value = "BB", Text = "Barbados" },
+                new SelectListItem() { Value = "BY", Text = "Belarus" },
+                new SelectListItem() { Value = "BE", Text = "Bélgica" },
+                new SelectListItem() { Value = "BZ", Text = "Belize" },
+                new SelectListItem() { Value = "BJ", Text = "Benin" },
+                new SelectListItem() { Value = "BM", Text = "Bermudas" },
+                new SelectListItem() { Value = "BO", Text = "Bolívia" },
+                new SelectListItem() { Value = "BA", Text = "Bósnia-Herzegóvina" },
+                new SelectListItem() { Value = "BW", Text = "Botsuana" },
+                new SelectListItem() { Value = "BR", Text = "Brasil" }
+            };
         }
     }
 }

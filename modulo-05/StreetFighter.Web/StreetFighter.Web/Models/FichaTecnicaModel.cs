@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,24 +9,22 @@ namespace StreetFighter.Web.Models
 {
     public class FichaTecnicaModel
     {
+        public string Imagem { get; set; }
+        [Required]
         public string Nome { get; set; }
-        public string PrimeiraAparicao { get; set; }
+        [DataType(DataType.Date, ErrorMessage = "Por favor insira uma data válida.")]
         public DateTime Nascimento { get; set; }
+        [DisplayName("Altura (cm)")]
         public int Altura { get; set; }
+        [DisplayName("Altura (kg)")]
         public double Peso { get; set; }
-        public List<string> Medidas { get; set; }
-        public string TipoSanguineo { get; set; }
-        public List<string> HabilidadesEspeciais { get; set; }
-        public List<string> CoisasQueGosta { get; set; }
-        public List<string> CoisasQueDesgosta { get; set; }
-        public string EstiloDeLuta { get; set; }
+        [Required]
+        [DisplayName("País de Origem")]
         public string Origem { get; set; }
-        public string FalaDeVitoria { get; set; }
-        public string SSF2Nickname { get; set; }
-        public string SFA3Nickname { get; set; }
-        public string SF4Nickname { get; set; }
-        public string SFA3Stage { get; set; }
-        public string SF2Stage { get; set; }
-        public List<string> GolpesEspeciais { get; set; }
+        [Required]
+        [DisplayName("Golpes Especiais")]
+        public string GolpesEspeciais { get; set; }
+        [DisplayName("Personagem Oculto")]
+        public bool PersonagemOculto { get; set; }
     }
 }
