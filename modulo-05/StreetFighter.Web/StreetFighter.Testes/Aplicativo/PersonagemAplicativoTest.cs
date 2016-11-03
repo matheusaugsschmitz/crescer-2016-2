@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace StreetFighter.Testes
+namespace StreetFighter.Testes.Aplicativo
 {
     [TestClass]
-    public class UnitTest1
+    public class PersonagemAplicativoTest
     {
         [TestMethod]
         public void TestMethod1()

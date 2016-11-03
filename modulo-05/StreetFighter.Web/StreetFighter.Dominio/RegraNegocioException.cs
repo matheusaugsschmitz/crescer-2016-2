@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace StreetFighter.Dominio
 {
-    public class Class1
+    public class RegraNegocioException : Exception
     {
+        public RegraNegocioException(string mensagem) : base(mensagem)
+        {
+
+        }
     }
 }
