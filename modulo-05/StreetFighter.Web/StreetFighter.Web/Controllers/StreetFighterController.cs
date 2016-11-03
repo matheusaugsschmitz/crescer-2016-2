@@ -83,6 +83,11 @@ namespace StreetFighter.Web.Controllers
                 return View("Cadastro", model);
             }
         }
+        public ActionResult ListaPersonagens()
+        {
+            ViewBag.Personagens = new List<Personagem> { new Personagem(1, "João", "M"), new Personagem(2, "Joaquina", "n")};
+            return View();
+        }
         private void PopularPaises()
         {
             ViewBag.ListaPaises = new List<SelectListItem>()

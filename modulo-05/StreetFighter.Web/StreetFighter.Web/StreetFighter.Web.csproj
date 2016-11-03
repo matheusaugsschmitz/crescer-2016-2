@@ -126,6 +126,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListaPersonagensModel.cs" />
     <Compile Include="Models\FichaTecnicaModel.cs" />
     <Compile Include="Models\SobreMimModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,6 +140,7 @@
     <Content Include="Views\StreetFighter\SobreMim.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\StreetFighter\Cadastro.cshtml" />
+    <Content Include="Views\StreetFighter\ListaPersonagens.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

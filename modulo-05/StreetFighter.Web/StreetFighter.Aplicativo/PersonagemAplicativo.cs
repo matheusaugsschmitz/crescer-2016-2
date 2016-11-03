@@ -10,22 +10,29 @@ namespace StreetFighter.Aplicativo
 {
     public class PersonagemAplicativo
     {
-        private readonly PersonagemRepositorio repositorio;
+        private readonly IPersonagemRepositorio repositorio;
         public PersonagemAplicativo()
         {
             this.repositorio = new PersonagemRepositorio();
         }
-        private readonly PersonagemRepositorio repositorio = new PersonagemRepositorio();
-        public List<Personagem> ListarPersonagens(string filtroNome)
+        internal PersonagemAplicativo(IPersonagemRepositorio repositorio)
         {
-            repositorio.ListarPersonagens();
+            this.repositorio = repositorio;
         }
         public void Salvar(Personagem personagem)
         {
             if (personagem.Id == 0)
-                repositorio.EditarPersonagem(personagem);
+            {
+                repositorio.IncluirPersonagem(personagem);
+            }
             else
+            {
                 repositorio.EditarPersonagem(personagem);
+            }
+        }
+        public List<Personagem> ListarPersonagens(string filtroNome)
+        {
+            return repositorio.ListarPersonagens("teste");
         }
         public void ExcluirPersonagem(Personagem personagem)
         {
