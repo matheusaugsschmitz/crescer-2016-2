@@ -62,7 +62,7 @@ namespace StreetFighter.Web.Controllers
                 try
                 {
                     var aplicativo = new PersonagemAplicativo();
-                    var personagem = new Personagem(model.Nome, model.Origem);
+                    var personagem = new Personagem(model.Id, model.Nome, model.Origem);
                     aplicativo.Salvar(personagem);
 
                 }

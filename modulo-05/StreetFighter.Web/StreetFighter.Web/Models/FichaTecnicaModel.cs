@@ -9,6 +9,7 @@ namespace StreetFighter.Web.Models
 {
     public class FichaTecnicaModel
     {
+        public int Id { get; set; }
         public string Imagem { get; set; }
         [Required]
         public string Nome { get; set; }
