@@ -62,7 +62,8 @@ namespace StreetFighter.Web.Controllers
                 try
                 {
                     var aplicativo = new PersonagemAplicativo();
-                    var personagem = new Personagem(model.Id, model.Nome, model.Origem);
+                    var personagem = new Personagem(model.Id, model.Nome, model.Origem, model.PrimeiraAparicao,
+            model.Nascimento, model.Altura, model.Peso, model.GolpesEspeciais, model.Imagem, model.PersonagemOculto);
                     aplicativo.Salvar(personagem);
 
                 }
@@ -85,7 +86,8 @@ namespace StreetFighter.Web.Controllers
         }
         public ActionResult ListaPersonagens()
         {
-            ViewBag.Personagens = new List<Personagem> { new Personagem(1, "João", "M"), new Personagem(2, "Joaquina", "n")};
+            ViewBag.Personagens = new List<Personagem> { new Personagem(1, "João", "M", "Afeganistão", 
+                Convert.ToDateTime("12/10/1990"), 200, 80, "Hadouken", "img", true)};
             return View();
         }
         private void PopularPaises()

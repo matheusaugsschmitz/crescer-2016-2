@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetFighter.Repositorio",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetFighter.Testes", "StreetFighter.Testes\StreetFighter.Testes.csproj", "{244289F8-6885-4C4E-8CEE-8AD91837B5A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetFighter.RepositorioEntF", "StreetFighter.RepositorioEntF\StreetFighter.RepositorioEntF.csproj", "{691AB3E6-337F-4A36-BD01-9C198A6ADF13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{244289F8-6885-4C4E-8CEE-8AD91837B5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{244289F8-6885-4C4E-8CEE-8AD91837B5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{244289F8-6885-4C4E-8CEE-8AD91837B5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691AB3E6-337F-4A36-BD01-9C198A6ADF13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691AB3E6-337F-4A36-BD01-9C198A6ADF13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691AB3E6-337F-4A36-BD01-9C198A6ADF13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691AB3E6-337F-4A36-BD01-9C198A6ADF13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

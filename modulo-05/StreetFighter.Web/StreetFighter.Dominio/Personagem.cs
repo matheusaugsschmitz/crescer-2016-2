@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,19 +9,19 @@ namespace StreetFighter.Dominio
 {
     public class Personagem
     {
-        public int Id { get; }
-        public string Nome { get; }
-        public string Origem { get; }
-        public string Imagem { get; }
-        public string PrimeiraAparicao { get; }
-        public DateTime? Nascimento { get; }
-        public int? Altura { get; }
-        public double? Peso { get; }
-        public string GolpesEspeciais { get; }
-        public bool PersonagemOculto { get; }
-        public Personagem(int id, string nome, string origem, string primeiraAparicao = "Desconhecida", 
-            DateTime? nascimento = null, int? altura = null, double? peso = null, string golpesEspeciais = "Nenhum golpe registrado!", 
-            string imagem = null, bool personagemOculto = false)
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Origem { get; set; }
+        public string Imagem { get; set; }
+        public string PrimeiraAparicao { get; set; }
+        public DateTime Nascimento { get; set; }
+        public int Altura { get; set; }
+        public double Peso { get; set; }
+        public string GolpesEspeciais { get; set; }
+        public bool PersonagemOculto { get; set; }
+        public Personagem(int id, string nome, string origem, string primeiraAparicao, 
+            DateTime nascimento, int altura, double peso, string golpesEspeciais, 
+            string imagem, bool personagemOculto)
         {
             this.Id = id;
             this.Nome = nome;

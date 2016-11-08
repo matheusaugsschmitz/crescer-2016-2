@@ -21,6 +21,7 @@ namespace StreetFighter.Web.Models
         [RegularExpression("\\d+", ErrorMessage = "Insira um peso válido!")]
         [DisplayName("Peso (kg)")]
         public double Peso { get; set; }
+        public string PrimeiraAparicao { get; set; }
         [Required]
         [DisplayName("País de Origem")]
         public string Origem { get; set; }
