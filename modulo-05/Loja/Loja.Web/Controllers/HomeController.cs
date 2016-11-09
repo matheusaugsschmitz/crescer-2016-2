@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Loja.Dominio;
+using Loja.Web.Models;
+using Loja.Web.Servicos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +13,10 @@ namespace Loja.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
+            List<Produto> produtos = produtoServico.ListarProdutos();
+            ListaProdutosModel model = new ListaProdutosModel(produtos);
+            return View(model);
         }
 
         public ActionResult About()

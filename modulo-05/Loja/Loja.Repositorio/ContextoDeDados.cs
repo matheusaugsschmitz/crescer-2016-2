@@ -15,7 +15,7 @@ namespace Loja.Repositorio
         {
 
         }
-
+        public DbSet<Produto> Produto { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
