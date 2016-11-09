@@ -13,8 +13,7 @@ namespace Loja.Repositorio
         {
             using (var context = new ContextoDeDados())
             {
-                var c = context.Produto.ToList();
-                return c;
+                return context.Produto.ToList();
             }
         }
     }
