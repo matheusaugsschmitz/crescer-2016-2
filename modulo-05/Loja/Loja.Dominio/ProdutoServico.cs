@@ -18,5 +18,22 @@ namespace Loja.Dominio
             return produtoRepositorio.ListarProdutos();
         }
 
+        public void CadastrarProduto(Produto produto)
+        {
+            produtoRepositorio.CadastrarProduto(produto);
+        }
+        public void AlterarProduto(Produto produto)
+        {
+            produtoRepositorio.AlterarProduto(produto);
+        }
+        public void RemoverProduto(Produto produto)
+        {
+            produtoRepositorio.RemoverProduto(produto);
+        }
+        public Produto BuscarPorId(int id)
+        {
+            return produtoRepositorio.BuscarPorId(id);
+        }
+
     }
 }

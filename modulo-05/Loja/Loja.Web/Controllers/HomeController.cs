@@ -18,19 +18,59 @@ namespace Loja.Web.Controllers
             ListaProdutosModel model = new ListaProdutosModel(produtos);
             return View(model);
         }
-
-        public ActionResult About()
+        public ActionResult Manter(int? id)
         {
-            ViewBag.Message = "Your application description page.";
+            if (id.HasValue)
+            {
+                ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
+                Produto produto = produtoServico.BuscarPorId(id.Value);
+                ProdutoModel model = new ProdutoModel(produto.Id, produto.Nome, produto.Valor);                
+                return View(model);
+            }
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Excluir(int id)
         {
-            ViewBag.Message = "Your contact page.";
+            ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
+            Produto produto = produtoServico.BuscarPorId(id);
+            produtoServico.RemoverProduto(produto);
+            return RedirectToAction("Index");
+        }
+        public ActionResult Salvar(ProdutoModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
+                    Produto produto;
 
-            return View();
+                    if (model.Id.HasValue)
+                    {
+                        produto = new Produto(model.Id.Value, model.Nome, model.Valor);
+                    }
+                    else
+                    {
+                        produto = new Produto(model.Nome, model.Valor);
+                    }
+                    produtoServico.Salvar(personagem);
+
+                    return View("FichaTecnica", model);
+                }
+                catch (RegraNegocioException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+                catch (Exception)
+                {
+                    ModelState.AddModelError("", "Ocorreu um erro inesperado. Contate o administrador do sistema.");
+                }
+            }
+
+            return View("Cadastro", model);
         }
     }
+}
 }
