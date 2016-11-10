@@ -45,8 +45,7 @@ namespace Loja.Repositorio
         {
             using(var context = new ContextoDeDados())
             {
-                Produto produtoEncontrado = context.Produto
-                                        .FirstOrDefault(p => p.Id == id);
+                Produto produtoEncontrado = context.Produto.Find(id);
                 return produtoEncontrado;
             }
         }
