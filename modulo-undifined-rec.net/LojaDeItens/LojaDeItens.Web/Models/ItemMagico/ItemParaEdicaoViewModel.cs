@@ -28,13 +28,14 @@ namespace LojaDeItens.Web.Models.ItemMagico
         [Required]
         [StringLength(50)]
         public string Nome { get; set; }
-
+        [Required]
+        [StringLength(200)]
         public string Descricao { get; set; }
-
+        [Required]
         public decimal Preco { get; set; }
-
+        [Required]
         public int Estoque { get; set; }
-
+        [Required]
         public bool Raro { get; set; }
     }
 }
