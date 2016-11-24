@@ -51,3 +51,4 @@ bld/
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
+/modulo-09/aula1/target/
