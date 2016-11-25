@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.cwi.crescer.lista1exercicios;
+package br.com.cwi.crescer.listasexercicios;
 
 import java.text.Normalizer;
 import javax.swing.JOptionPane;
@@ -44,7 +44,7 @@ public class MeuStringUtil {
         JOptionPane.showMessageDialog(null, retorno);
     }
     public static boolean ehVazia(String string){
-        return string.isEmpty();
+        return !string.isEmpty();
     }
     public static int numeroDeVogais(String string){
         return string.toLowerCase().replaceAll("[^a^e^i^o^u]", "").length();

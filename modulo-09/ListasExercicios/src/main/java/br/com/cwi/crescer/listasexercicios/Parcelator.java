@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.cwi.crescer.lista1exercicios;
+package br.com.cwi.crescer.listasexercicios;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
