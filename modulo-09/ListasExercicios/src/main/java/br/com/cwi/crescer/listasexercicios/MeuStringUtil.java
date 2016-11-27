@@ -22,20 +22,21 @@ public class MeuStringUtil {
                 .append(quebraLinha).append("4 - Identificar se é um palíndromo").toString());
         String texto = JOptionPane.showInputDialog("Informe a string!");
         String retorno;
+        MeuStringUtil stringUtil = new MeuStringUtil();
         switch (Integer.parseInt(opcao)) {
             case 1:
-                retorno = new StringBuffer("A string informada ").append(ehVazia(texto) ? "" : "não ")
+                retorno = new StringBuffer("A string informada ").append(stringUtil.ehVazia(texto) ? "" : "não ")
                                                                  .append("é vazia.").toString();
                 break;
             case 2:
-                retorno = new StringBuffer("String possui ").append(numeroDeVogais(texto))
+                retorno = new StringBuffer("String possui ").append(stringUtil.numeroDeVogais(texto))
                                                             .append(" vogais.").toString();
                 break;
             case 3:
-                retorno = new StringBuffer("String invertida: ").append(inverteString(texto)).toString();
+                retorno = new StringBuffer("String invertida: ").append(stringUtil.inverteString(texto)).toString();
                 break;
             case 4:
-                retorno = new StringBuffer("A string informada ").append(identificarPalindromo(texto) ? "" : "não ")
+                retorno = new StringBuffer("A string informada ").append(stringUtil.identificarPalindromo(texto) ? "" : "não ")
                                                                  .append("é um pálindromo.").toString();
                 break;
             default:
@@ -43,20 +44,20 @@ public class MeuStringUtil {
         }
         JOptionPane.showMessageDialog(null, retorno);
     }
-    public static boolean ehVazia(String string){
+    public boolean ehVazia(String string){
         return !string.isEmpty();
     }
-    public static int numeroDeVogais(String string){
+    public int numeroDeVogais(String string){
         return string.toLowerCase().replaceAll("[^a^e^i^o^u]", "").length();
     }
-    public static String inverteString(String string){
+    public String inverteString(String string){
         return new StringBuilder(string).reverse().toString();
     }
-    public static boolean identificarPalindromo(String string){
+    public boolean identificarPalindromo(String string){
         String frasePura = normalize(string.toLowerCase().replaceAll(" ", ""));
         return inverteString(frasePura).equals(frasePura);
     }
-    private static String normalize(String string) {
+    private String normalize(String string) {
         return Normalizer.normalize(string, Normalizer.Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
     }
 }

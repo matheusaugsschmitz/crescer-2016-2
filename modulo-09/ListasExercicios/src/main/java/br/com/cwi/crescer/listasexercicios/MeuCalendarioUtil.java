@@ -27,22 +27,23 @@ public class MeuCalendarioUtil {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(data);
         String retorno;
+        MeuCalendarioUtil calendarioUtil = new MeuCalendarioUtil();
         switch (Integer.parseInt(opcao)) {
             case 1:
-                String dia = diaDaSemana(calendar);
+                String dia = calendarioUtil.diaDaSemana(calendar);
                 retorno = new StringBuffer("Você nasceu em um").append(dia.length() > 7 ? "a " : " ")
                                                                .append(dia)
                                                                .append(".").toString();
                 break;
             case 2:
-                retorno = new StringBuffer(tempoDecorrido(calendar)).toString();
+                retorno = new StringBuffer(calendarioUtil.tempoDecorrido(calendar)).toString();
                 break;
             default:
                 retorno = "Opção selecionada inválida";
         }
         JOptionPane.showMessageDialog(null, retorno);
     }
-    public static String diaDaSemana(Calendar calendar){
+    public String diaDaSemana(Calendar calendar){
         ArrayList<String> diasDaSemana = new ArrayList<String>();
         diasDaSemana.add("domingo");
         diasDaSemana.add("segunda-feira");
@@ -53,7 +54,7 @@ public class MeuCalendarioUtil {
         diasDaSemana.add("sábado");
         return diasDaSemana.get(calendar.get(Calendar.DAY_OF_WEEK)-1);
     }
-    public static String tempoDecorrido(Calendar calendar){
+    public String tempoDecorrido(Calendar calendar){
         Calendar calendarAtual = Calendar.getInstance();
         calendarAtual.setTime(new Date(System.currentTimeMillis()));        
         Date dataAtual = new Date(System.currentTimeMillis());
