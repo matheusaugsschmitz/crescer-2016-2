@@ -29,7 +29,7 @@ public class MeuWriterUtils {
             System.out.println("Insira o texto para adicionar no arquivo!");
             String linhasTexto = scanner.nextLine();
             MeuWriterUtils writerUtils = new MeuWriterUtils();
-            writerUtils.excreverConteudo(linhaComando, Arrays.asList(linhasTexto.split("\\\\n")));            
+            writerUtils.escreverConteudo(linhaComando, Arrays.asList(linhasTexto.split("\\\\n")));            
         } catch (Exception e) {
             System.out.println("Ocorreu um erro ao ler/executar o comando!");
         }
@@ -38,8 +38,8 @@ public class MeuWriterUtils {
     O arquivo tem deve ser apenas do tipo .txt, caso contrário exibir um mensagem que o arquivo solicitado é incompatível.
     Caso não localizei, exibir um mensagem que o mesmo não existe.*/
     
-    public void excreverConteudo(String arquivo, List<String> conteudo){
-        if(arquivo.contains(".txt")){
+    public void escreverConteudo(String arquivo, List<String> conteudo){
+        if(arquivo.contains(".txt") || arquivo.contains(".csv")){
             try (   
                 final Writer writer = new FileWriter(arquivo, true);
                 final BufferedWriter bufferedWriter = new BufferedWriter(writer);

@@ -65,9 +65,9 @@ public class MeuFileUtils {
             partesComFormato = partesCaminho.stream().map((parteCaminho) -> parteCaminho.contains(".") ? 1 : 0).reduce(partesComFormato, Integer::sum);
             if(partesComFormato <= 1){
                 this.caminhoCriacao = new StringBuffer(partesCaminho.get(0)).append("/").toString();
-                for (String string : partesCaminho) {
+                partesCaminho.forEach((string) -> {
                     this.criar(string);
-                }
+                });
             }else{
                 System.out.println("Caminho informado inválido!");
             }
