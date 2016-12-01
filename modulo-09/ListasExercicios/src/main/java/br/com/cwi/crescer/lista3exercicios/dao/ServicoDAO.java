@@ -6,12 +6,13 @@
 package br.com.cwi.crescer.lista3exercicios.dao;
 
 import br.com.cwi.crescer.lista3exercicios.entity.Servico;
-import java.util.List;
 
 /**
  *
  * @author matheus.schmitz
  */
-public class ServicoDAO{
-
+public class ServicoDAO extends AbstractDAO<Servico, Long>{
+    public ServicoDAO(){
+        super("Servico");
+    }
 }

@@ -6,12 +6,13 @@
 package br.com.cwi.crescer.lista3exercicios.dao;
 
 import br.com.cwi.crescer.lista3exercicios.entity.Cotacao;
-import java.util.List;
 
 /**
  *
  * @author matheus.schmitz
  */
-public class CotacaoDAO{
-
+public class CotacaoDAO extends AbstractDAO<Cotacao, Long>{
+    public CotacaoDAO(){
+        super("Cotacao");
+    }
 }

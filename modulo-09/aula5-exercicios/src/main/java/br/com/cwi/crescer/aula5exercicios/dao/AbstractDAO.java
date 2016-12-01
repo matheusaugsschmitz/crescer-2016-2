@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package br.com.cwi.crescer.aula5exercicios.dao;
 
-import br.com.cwi.crescer.lista3exercicios.dao.IDAO;
 import java.util.List;
 import javax.persistence.EntityManager;
 
 /**
  *
- * @author matheus.schmitz
- * @param <T>
- * @param <ID>
+ * @author matha
  */
 public abstract class AbstractDAO<T, ID> implements IDAO<T, ID>{
 
@@ -59,5 +57,4 @@ public abstract class AbstractDAO<T, ID> implements IDAO<T, ID>{
     public List<T> list() {
         return this.getEntityManager().createQuery(this.consulta).getResultList();
     }
-    
 }

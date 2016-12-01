@@ -1,4 +1,4 @@
-package br.com.cwi.crescer.aula3.dao;
+package br.com.cwi.crescer.aula4;
 
 import java.util.List;
 
@@ -8,10 +8,12 @@ import java.util.List;
  * @param <ID>
  */
 public interface IDao<T, ID> {
-    
-    List<T> list(String query);
 
     void insert(T t);
     
     void delete(T t);
+    
+    T find(ID id);
+    
+    List<T> findAll();
 }

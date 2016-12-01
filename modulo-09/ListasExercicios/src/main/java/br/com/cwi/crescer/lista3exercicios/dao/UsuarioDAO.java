@@ -6,12 +6,13 @@
 package br.com.cwi.crescer.lista3exercicios.dao;
 
 import br.com.cwi.crescer.lista3exercicios.entity.Usuario;
-import java.util.List;
 
 /**
  *
  * @author matheus.schmitz
  */
-public class UsuarioDAO{
-
+public class UsuarioDAO extends AbstractDAO<Usuario, Long>{
+    public UsuarioDAO(){
+        super("Usuario");
+    }
 }
