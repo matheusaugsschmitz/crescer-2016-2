@@ -6,43 +6,45 @@
 package br.com.cwi.crescer.aula5exercicios.Entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
+import static javax.persistence.CascadeType.ALL;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
  *
- * @author matha
+ * @author matheus.schmitz
  */
 @Entity
-@Table(name = "ATOR")
-public class Ator implements Serializable{
+@Table(name = "IDIOMA")
+public class Idioma implements Serializable{
     @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_ATOR")
-    @SequenceGenerator(name = "SEQ_ATOR", sequenceName = "SEQ_ATOR", allocationSize = 1)
+    @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_IDIOMA")
+    @SequenceGenerator(name = "SEQ_IDIOMA", sequenceName = "SEQ_IDIOMA", allocationSize = 1)
     @Basic(optional = false)
-    @Column(name = "ID_ATOR")
-    private Long idAtor;
+    @Column(name = "ID_IDIOMA")
+    private Long idIdioma;
 
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
     
-    @ManyToOne
-    private Elenco elenco;
+    @OneToMany(cascade = ALL)
+    private List<Filme> filmes;
 
-    public Long getIdAtor() {
-        return idAtor;
+    public Long getIdIdioma() {
+        return idIdioma;
     }
 
-    public void setIdAtor(Long idAtor) {
-        this.idAtor = idAtor;
+    public void setIdIdioma(Long idIdioma) {
+        this.idIdioma = idIdioma;
     }
 
     public String getNome() {
@@ -53,13 +55,11 @@ public class Ator implements Serializable{
         this.nome = nome;
     }
 
-    public Elenco getElenco() {
-        return elenco;
+    public List<Filme> getFilmes() {
+        return filmes;
     }
 
-    public void setElenco(Elenco elenco) {
-        this.elenco = elenco;
+    public void setFilmes(List<Filme> filmes) {
+        this.filmes = filmes;
     }
-    
-    
 }
