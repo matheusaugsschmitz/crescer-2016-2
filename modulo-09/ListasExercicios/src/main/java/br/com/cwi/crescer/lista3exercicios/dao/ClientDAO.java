@@ -5,10 +5,14 @@
  */
 package br.com.cwi.crescer.lista3exercicios.dao;
 
+import br.com.cwi.crescer.lista3exercicios.entity.Client;
+
 /**
  *
  * @author matheus.schmitz
  */
-public class ClientDAO {
-    
+public class ClientDAO extends AbstractDAO<Client, Long>{
+    public ClientDAO(){
+        super("Client");
+    }
 }

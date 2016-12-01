@@ -8,12 +8,10 @@ import java.util.List;
  * @param <ID>
  */
 public interface IDao<T, ID> {
+    
+    List<T> list(String query);
 
     void insert(T t);
     
     void delete(T t);
-    
-    T find(ID id);
-    
-    List<T> findAll();
 }

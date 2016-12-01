@@ -5,11 +5,15 @@
  */
 package br.com.cwi.crescer.lista3exercicios.dao;
 
+import br.com.cwi.crescer.lista3exercicios.entity.Contract;
+
 
 /**
  *
  * @author matheus.schmitz
  */
-public class ContractDAO{
-
+public class ContractDAO extends AbstractDAO<Contract, Long>{
+    public ContractDAO(){
+        super("Contract");
+    }
 }

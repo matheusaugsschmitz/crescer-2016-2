@@ -6,13 +6,14 @@
 package br.com.cwi.crescer.lista3exercicios.dao;
 
 import br.com.cwi.crescer.lista3exercicios.entity.ContractValue;
-import java.util.List;
 
 
 /**
  *
  * @author matheus.schmitz
  */
-public class ContractValueDAO{
-
+public class ContractValueDAO extends AbstractDAO<ContractValue, Long>{
+    public ContractValueDAO(){
+        super("ContractValue");
+    }
 }

@@ -10,6 +10,8 @@ import java.util.List;
 /**
  *
  * @author matha
+ * @param <T>
+ * @param <ID>
  */
 public interface IDAO<T, ID> {
     void insert(T t);

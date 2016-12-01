@@ -6,12 +6,13 @@
 package br.com.cwi.crescer.lista3exercicios.dao;
 
 import br.com.cwi.crescer.lista3exercicios.entity.CurrencyExchange;
-import java.util.List;
 
 /**
  *
  * @author matheus.schmitz
  */
-public class CurrencyExchangeDAO{
-
+public class CurrencyExchangeDAO extends AbstractDAO<CurrencyExchange, Long>{
+    public CurrencyExchangeDAO(){
+        super("CurrencyExchange");
+    }
 }
