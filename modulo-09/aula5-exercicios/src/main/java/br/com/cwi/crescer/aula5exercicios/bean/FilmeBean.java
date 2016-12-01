@@ -21,7 +21,7 @@ public class FilmeBean extends AbstractDAO<Filme, Long>{
     private EntityManager entityManager;
 
     public FilmeBean() {
-        super("FILME");
+        super("Filme");
     }
 
     @Override

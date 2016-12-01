@@ -21,7 +21,7 @@ public class ElencoBean extends AbstractDAO<Elenco, Long>{
     private EntityManager entityManager;
 
     public ElencoBean() {
-        super("ELENCO");
+        super("Elenco");
     }
 
     @Override

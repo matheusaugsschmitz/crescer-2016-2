@@ -21,7 +21,7 @@ public class AtorBean extends AbstractDAO<Ator, Long>{
     private EntityManager entityManager;
 
     public AtorBean() {
-        super("ATOR");
+        super("Ator");
     }
 
     @Override

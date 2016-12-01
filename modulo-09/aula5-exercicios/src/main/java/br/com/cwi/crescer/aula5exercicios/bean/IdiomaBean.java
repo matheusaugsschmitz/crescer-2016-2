@@ -22,7 +22,7 @@ public class IdiomaBean extends AbstractDAO<Idioma, Long>{
     private EntityManager entityManager;
 
     public IdiomaBean() {
-        super("IDIOMA");
+        super("Idioma");
     }
 
     @Override

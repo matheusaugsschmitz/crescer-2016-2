@@ -21,7 +21,7 @@ public class ClassificacaoBean extends AbstractDAO<Classificacao, Long>{
     private EntityManager entityManager;
 
     public ClassificacaoBean() {
-        super("CLASSIFICACAO");
+        super("Classificacao");
     }
 
     @Override

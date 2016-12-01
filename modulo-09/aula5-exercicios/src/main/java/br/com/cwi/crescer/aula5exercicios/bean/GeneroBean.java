@@ -21,7 +21,7 @@ public class GeneroBean extends AbstractDAO<Genero, Long>{
     private EntityManager entityManager;
 
     public GeneroBean() {
-        super("GENERO");
+        super("Genero");
     }
 
     @Override

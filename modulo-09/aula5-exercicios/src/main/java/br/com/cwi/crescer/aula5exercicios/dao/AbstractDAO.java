@@ -5,6 +5,7 @@
  */
 package br.com.cwi.crescer.aula5exercicios.dao;
 
+import java.sql.DriverManager;
 import java.util.List;
 import javax.persistence.EntityManager;
 
