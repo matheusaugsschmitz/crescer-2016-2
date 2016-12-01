@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class FilmeBean extends AbstractDAO<Filme, Long>{
-    @PersistenceContext(unitName = "crescer")
+    @PersistenceContext(unitName = "CRESCER")
     private EntityManager entityManager;
 
     public FilmeBean() {

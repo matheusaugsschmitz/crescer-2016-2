@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class GeneroBean extends AbstractDAO<Genero, Long>{
-    @PersistenceContext(unitName = "crescer")
+    @PersistenceContext(unitName = "CRESCER")
     private EntityManager entityManager;
 
     public GeneroBean() {

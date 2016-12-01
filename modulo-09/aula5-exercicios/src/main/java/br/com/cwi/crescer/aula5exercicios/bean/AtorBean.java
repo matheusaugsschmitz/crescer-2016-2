@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class AtorBean extends AbstractDAO<Ator, Long>{
-    @PersistenceContext(unitName = "crescer")
+    @PersistenceContext(unitName = "CRESCER")
     private EntityManager entityManager;
 
     public AtorBean() {

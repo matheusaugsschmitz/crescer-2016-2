@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class ElencoBean extends AbstractDAO<Elenco, Long>{
-    @PersistenceContext(unitName = "crescer")
+    @PersistenceContext(unitName = "CRESCER")
     private EntityManager entityManager;
 
     public ElencoBean() {

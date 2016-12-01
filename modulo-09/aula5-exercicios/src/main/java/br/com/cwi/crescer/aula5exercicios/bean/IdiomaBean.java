@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class IdiomaBean extends AbstractDAO<Idioma, Long>{
 
-    @PersistenceContext(unitName = "crescer")
+    @PersistenceContext(unitName = "CRESCER")
     private EntityManager entityManager;
 
     public IdiomaBean() {
