@@ -61,5 +61,4 @@ public class Atores {
         atorBean.insert(ator);
         this.init();
     }
-    
 }
