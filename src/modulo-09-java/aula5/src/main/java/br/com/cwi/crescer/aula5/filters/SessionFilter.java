@@ -43,7 +43,8 @@ public class SessionFilter implements Filter {
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
         final HttpSession session = request.getSession();
         final UserDetails user = (UserDetails) session.getAttribute(USER_AUTH);
-        if (!request.getRequestURI().contains("login.xhtml") && user == null) {
+        String req = request.getRequestURI();
+        if (!req.contains("login.xhtml") && !req.contains("cadastro.xhtml") && user == null) {
             response.sendRedirect(request.getContextPath() + "/faces/login.xhtml");
         }
     }

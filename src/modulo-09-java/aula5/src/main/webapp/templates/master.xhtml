@@ -22,7 +22,8 @@
                         <span class="glyphicon glyphicon-th"> </span>
                     </div>
                 </div>
-                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p> 
+                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">#{loginMBean.loggedUsername}</a></p> 
+                <p class="navbar-text navbar-right"><a href="#{loginMBean.logout()}" class="navbar-link">Sign out</a></p>
             </div>
         </nav>
         <div class="container-fluid">

@@ -45,6 +45,6 @@ public class LoginMBean implements Serializable {
 
     public String logout() {
         FacesUtils.getSession().invalidate();
-        return "logout";
+        return "login.xhtml";
     }
 }
