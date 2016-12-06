@@ -29,7 +29,7 @@ public class Pessoa {
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_PESSOA")
     @SequenceGenerator(name = "SEQ_PESSOA", sequenceName = "SEQ_PESSOA", allocationSize = 1)
     @Basic(optional = false)
-    @Column(name = "ID")
+    @Column(name = "ID_PESSOA")
     private Long idPessoa;
 
     @Basic(optional = false)
