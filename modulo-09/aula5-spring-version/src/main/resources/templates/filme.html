@@ -62,7 +62,7 @@ and open the template in the editor.
                 <select class="form-control" id="classificacao" name="idioma">
                     <option th:each="idiomaOption : ${idiomas}" 
                             th:value="${idiomaOption.id}"
-                            th:text="${idiomaOption.descricao}"></option>
+                            th:text="${idiomaOption.nome}"></option>
                 </select>
             </div>
 
@@ -74,7 +74,8 @@ and open the template in the editor.
             <thead>
                 <tr>
                     <th th:text="#{label.id}" />
-                    <th th:text="#{label.descricao}" />
+                    <th th:text="#{label.titulo}" />
+                    <th th:text="#{label.diretor}" />
                     <th th:text="#{label.genero}" />
                     <th th:text="#{label.dataLancamento}" />
                     <th th:text="#{label.elenco}" />
@@ -86,7 +87,19 @@ and open the template in the editor.
             <tbody>
                 <tr th:each="f : ${filmes}">
                     <td th:text="${f.id}">ID</td>
-                    <td th:text="${f.descricao}">NOME</td>
+                    <td th:text="${f.titulo}">NOME</td>
+                    <td th:text="${f.diretor}">DIRETOR</td>
+                    <td th:text="${f.genero.descricao}">GENERO</td>
+                    <td th:text="${f.lancamento}">DATA DE LANCAMENTO</td>
+                    <td>
+                        <select class="form-control" id="atoresElenco" name="atoresElenco">
+                            <option th:text="${f.elenco.descricao}" disabled="disabled"></option>
+                            <option th:each="atorElenco : ${f.elenco.atores}"
+                                    th:text="${atorElenco.nome}"></option>
+                        </select>
+                    </td>
+                    <td th:text="${f.classificacao.descricao}">CLASSIFICACAO</td>
+                    <td th:text="${f.idioma.nome}">IDIOMA</td>
                     <td>
                         <a th:href="@{${'/filme'}(id=${f.id})}" class="btn btn-default btn-xs">Editar</a>
                     </td>

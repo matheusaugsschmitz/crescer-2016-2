@@ -44,6 +44,12 @@ and open the template in the editor.
                     <td th:text="${e.id}">ID</td>
                     <td th:text="${e.descricao}">NOME</td>
                     <td>
+                        <select class="form-control" id="atoresElenco" name="atoresElenco">
+                            <option th:each="atorElenco : ${e.atores}"
+                                    th:text="${atorElenco.nome}"></option>
+                        </select>
+                    </td>
+                    <td>
                         <a th:href="@{${'/elenco'}(id=${e.id})}" class="btn btn-default btn-xs">Editar</a>
                     </td>
                 </tr>
