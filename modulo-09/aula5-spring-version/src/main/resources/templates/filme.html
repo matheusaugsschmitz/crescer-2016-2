@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments :: head('Cadastro de Filmes')">
+    </head>
+    <body>
+        <form action="#" th:action="@{/filme}" th:object="${filme}" method="POST">
+
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="form-group" th:classappend="${#fields.hasErrors('titulo')} ? has-error">
+                <label for="titulo" th:text="#{label.titulo}"></label>
+                <input class="form-control" type="text" th:field="*{titulo}" autofocus="true" />
+                <span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="help-block"></span>
+            </div>
+
+            <div class="form-group" th:classappend="${#fields.hasErrors('genero')} ? has-error">
+                <label for="genero" th:text="#{label.genero}"></label>
+                <select class="form-control" id="genero" name="genero">
+                    <option th:each="generoOption : ${generos}" 
+                            th:value="${generoOption.id}"
+                            th:text="${generoOption.descricao}"></option>
+                </select>
+            </div>
+            
+            <div class="form-group" th:classappend="${#fields.hasErrors('diretor')} ? has-error">
+                <label for="diretor" th:text="#{label.diretor}"></label>
+                <input class="form-control" type="text" th:field="*{diretor}" autofocus="true" />
+                <span th:if="${#fields.hasErrors('diretor')}" th:errors="*{diretor}" class="help-block"></span>
+            </div>
+            
+            <div class="form-group" th:classappend="${#fields.hasErrors('lancamento')} ? has-error">
+                <label for="lancamento" th:text="#{label.dataLancamento}"></label>
+                <input class="form-control" type="text" th:field="*{lancamento}" autofocus="true" />
+                <span th:if="${#fields.hasErrors('lancamento')}" th:errors="*{lancamento}" class="help-block"></span>
+            </div>
+            
+            <div class="form-group" th:classappend="${#fields.hasErrors('elenco')} ? has-error">
+                <label for="elenco" th:text="#{label.elenco}"></label>
+                <select class="form-control" id="elenco" name="elenco">
+                    <option th:each="elencoOption : ${elencos}" 
+                            th:value="${elencoOption.id}"
+                            th:text="${elencoOption.descricao}"></option>
+                </select>
+            </div>
+            
+            <div class="form-group" th:classappend="${#fields.hasErrors('classificacao')} ? has-error">
+                <label for="classificacao" th:text="#{label.classificacao}"></label>
+                <select class="form-control" id="classificacao" name="classificacao">
+                    <option th:each="classificacaoOption : ${classificacoes}" 
+                            th:value="${classificacaoOption.id}"
+                            th:text="${classificacaoOption.descricao}"></option>
+                </select>
+            </div>
+            
+            <div class="form-group" th:classappend="${#fields.hasErrors('idioma')} ? has-error">
+                <label for="idioma" th:text="#{label.idioma}"></label>
+                <select class="form-control" id="classificacao" name="idioma">
+                    <option th:each="idiomaOption : ${idiomas}" 
+                            th:value="${idiomaOption.id}"
+                            th:text="${idiomaOption.descricao}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
+            </div>
+        </form>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th th:text="#{label.id}" />
+                    <th th:text="#{label.descricao}" />
+                    <th th:text="#{label.genero}" />
+                    <th th:text="#{label.dataLancamento}" />
+                    <th th:text="#{label.elenco}" />
+                    <th th:text="#{label.classificacao}" />
+                    <th th:text="#{label.idioma}" />
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="f : ${filmes}">
+                    <td th:text="${f.id}">ID</td>
+                    <td th:text="${f.descricao}">NOME</td>
+                    <td>
+                        <a th:href="@{${'/filme'}(id=${f.id})}" class="btn btn-default btn-xs">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div th:replace="fragments :: paginator(${filmes}, '/filme')">
+
+        </div>
+    </body>
+</html>

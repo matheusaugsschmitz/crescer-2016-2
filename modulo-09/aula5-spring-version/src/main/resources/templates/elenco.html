@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments :: head('Cadastro de Elencos')">
+    </head>
+    <body>
+        <form action="#" th:action="@{/elenco}" th:object="${elenco}" method="POST">
+
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="form-group" th:classappend="${#fields.hasErrors('descricao')} ? has-error">
+                <label for="descricao" th:text="#{label.descricao}"></label>
+                <input class="form-control" type="text" th:field="*{descricao}" autofocus="true" />
+                <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="help-block"></span>
+            </div>
+
+            <div class="form-group" th:classappend="${#fields.hasErrors('atores')} ? has-error">
+                <select class="form-control" id="atores" name="atores" multiple="multiple" >
+                    <option th:each="ator : ${atoresAll}" 
+                            th:value="${ator.id}"
+                            th:text="${ator.nome}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
+            </div>
+        </form>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th th:text="#{label.id}" />
+                    <th th:text="#{label.descricao}" />
+                    <th th:text="#{label.atores}" />
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="e : ${elencos}">
+                    <td th:text="${e.id}">ID</td>
+                    <td th:text="${e.descricao}">NOME</td>
+                    <td>
+                        <a th:href="@{${'/elenco'}(id=${e.id})}" class="btn btn-default btn-xs">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div th:replace="fragments :: paginator(${elencos}, '/elenco')">
+
+        </div>
+    </body>
+</html>

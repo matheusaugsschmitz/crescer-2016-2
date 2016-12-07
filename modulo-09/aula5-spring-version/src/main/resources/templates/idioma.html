@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments :: head('Cadastro de Idiomas')">
+    </head>
+    <body>
+        <form action="#" th:action="@{/idioma}" th:object="${idioma}" method="POST">
+
+                <input type="hidden" th:field="*{id}"/>
+
+                <div class="form-group" th:classappend="${#fields.hasErrors('nome')} ? has-error">
+                    <label for="nome" th:text="#{label.nome}"></label>
+                    <input class="form-control" type="text" th:field="*{nome}" autofocus="true" />
+                    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="help-block"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
+                </div>
+            </form>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th th:text="#{label.id}" />
+                    <th th:text="#{label.nome}" />
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="i : ${idiomas}">
+                    <td th:text="${i.id}">ID</td>
+                    <td th:text="${i.nome}">NOME</td>
+                    <td>
+                        <a th:href="@{${'/idioma'}(id=${i.id})}" class="btn btn-default btn-xs">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div th:replace="fragments :: paginator(${idiomas}, '/idioma')">
+
+        </div>
+    </body>
+</html>

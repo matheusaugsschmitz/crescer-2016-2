@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments :: head('Cadastro de Generos')">
+    </head>
+    <body>
+        <form action="#" th:action="@{/genero}" th:object="${genero}" method="POST">
+
+                <input type="hidden" th:field="*{id}"/>
+
+                <div class="form-group" th:classappend="${#fields.hasErrors('descricao')} ? has-error">
+                    <label for="descricao" th:text="#{label.descricao}"></label>
+                    <input class="form-control" type="text" th:field="*{descricao}" autofocus="true" />
+                    <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="help-block"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
+                </div>
+            </form>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th th:text="#{label.id}" />
+                    <th th:text="#{label.descricao}" />
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="g : ${generos}">
+                    <td th:text="${g.id}">ID</td>
+                    <td th:text="${g.descricao}">NOME</td>
+                    <td>
+                        <a th:href="@{${'/genero'}(id=${g.id})}" class="btn btn-default btn-xs">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div th:replace="fragments :: paginator(${generos}, '/genero')">
+
+        </div>
+    </body>
+</html>
