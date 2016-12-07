@@ -40,6 +40,13 @@
         </dependency>
     </dependencies>
     
+    <repositories> 
+        <repository>
+            <id>codelds</id>
+            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+        </repository>
+    </repositories>
+    
     <build>
         <plugins>
             <plugin>

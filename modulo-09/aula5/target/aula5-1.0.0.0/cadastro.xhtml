@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    template="/templates/template.xhtml">
+    <ui:define name="form">
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h:outputText id="title" value="#{bundle.cadastro_title}"/>
+        </div>
+        <div class="panel-body">
+            <div class="form-group"> 
+                <h:outputLabel for="username" value="#{bundle.cadastro_username}"></h:outputLabel>
+                <h:inputText id="username" value="#{cadastroMBean.entity.username}" requiredMessage="Insira seu nome!" styleClass="form-control" required="true"/>
+            </div>
+            
+            <div class="form-group"> 
+                <h:outputLabel for="email" value="#{bundle.cadastro_email}"></h:outputLabel>
+                <h:inputText id="email" value="#{cadastroMBean.entity.email}" requiredMessage="Insira seu e-mail!" styleClass="form-control" required="true"/>
+            </div>
+            
+            <div class="form-group"> 
+                <h:outputLabel for="password" value="#{bundle.cadastro_password}"></h:outputLabel>
+                <h:inputSecret id="password" value="#{cadastroMBean.entity.password}" requiredMessage="Insira sua senha!" styleClass="form-control" required="true"/>
+            </div>
+
+            <h:commandButton type="submit" value="#{bundle.cadastro_registrar}" styleClass="btn btn-success" action="#{cadastroMBean.cadastrar}">    
+                <f:ajax execute="@form" render="@form" />
+            </h:commandButton>
+            <h:messages styleClass="alert" errorClass="alert-danger"/>
+        </div>
+    </div>
+    </ui:define>
+</ui:composition>
